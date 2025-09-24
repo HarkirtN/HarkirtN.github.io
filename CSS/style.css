@@ -1,0 +1,10 @@
+body {
+    font-size: small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: normal;
+    background-color: #ffefd5;
+    color: black;
+}
+p {
+    color: rgba (0,0,0,0.5);
+}
