@@ -1,0 +1,47 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 3em;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h2 {
+    background-color: aqua; 
+    padding: 1rem;
+    border-radius: 2rem 2rem 0 0 ;
+}
+
+nav {
+    border: 2px solid red;
+    border-radius: 2rem;
+    margin: auto 1rem;
+    font-size: 1rem;
+    line-height: 5rem;
+
+}
+ul {
+list-style-type: none;
+border-top: 1px color blueviolet;
+width: auto;
+
+}
+
+li :hover {
+cursor: pointer;
+background-color: blanchedalmond; 
+color: blueviolet;
+display: block; 
+}
+li :visited {
+    text-decoration: line-through;
+    color: darkslategrey;
+}
+
+li:last-child a {
+border-radius: 0 0 2rem 2rem;
+}
