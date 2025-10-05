@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0 ;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+    margin-inline: auto;
+    background-color: white;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 2 rem;
+}
+
+.box {
+background-color: white;
+color: grey;
+}
+
+ul {
+    list-style-type: none;
+}
+
