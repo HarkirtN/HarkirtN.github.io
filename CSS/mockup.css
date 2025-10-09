@@ -4,8 +4,7 @@
 }
 
 body {
-  font-family: sans-serif;
-}
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif}
 
 .container {
     margin-inline: auto;
@@ -15,14 +14,104 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 2 rem;
+    padding-left:  0.5 em;
+    padding-right: 1 em;
 }
 
 .box {
 background-color: white;
 color: grey;
+border: 0 ;
+box-sizing: border-box;
+vertical-align: baseline;
+flex-direction: row;
+margin-inline-end: 5rem;
+padding-bottom: 1rem;
 }
 
-ul {
-    list-style-type: none;
+.unstyled-list {
+    background-color: white;
+    color: grey;
+   list-style-type: none;
+   display: flex;
+   column-gap: 2rem;
+   width: 70%;
+   padding-left: 2rem;
+   padding-right: 2 rem;
+   cursor: pointer;
+}
+.expanded-sticky-searchbar {
+    background-color: #051a49;
+    color: white;
 }
 
+.input-title {
+    display: block;
+    margin-inline-end: 7rem;
+}
+
+.input-bar {
+    display: block;
+    margin-inline-end: 1rem;
+    background-color: white;
+    color: rgba(128, 128, 128, 0.477);
+    padding: 1px 100px 1px 10px;
+}
+
+.search-bars {
+    display: inline-block;
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+}
+.search-button {
+    background-color: #e60278;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0.5rem;
+    width: 100%;  
+    position: relative;
+}
+a:hover {
+    cursor: pointer;
+}
+
+.pills {
+    display: inline-block;
+    padding: 0.5rem;
+    margin-inline-start: 1rem;
+    border: solid 2px rgba(255, 255, 255, 0.849);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.tool-tip {
+    display: inline-block;
+    border: solid 2px rgba(255, 255, 255, 0.849);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.mini-results {
+  display: flex; 
+  margin-top: 2rem;
+}
+
+.left-left {
+    display: inline-flex;
+   padding: 0.5rem;
+   column-gap: 1.5rem;
+   margin-bottom: 2rem;
+   margin-inline-start: 2rem;
+   border: solid 2px #051a49;
+   border-radius: 10px;
+}
+
+.left-right {
+    display: flex;
+    justify-content: flex-end;
+}
+  
