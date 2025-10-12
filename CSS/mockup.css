@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif}
+  font-family: Arial, Helvetica, sans-serif}
 
 .container {
     margin-inline: auto;
@@ -114,6 +114,8 @@ a:hover {
 
 .within-article {
     display: flexbox;
+    flex: 3 1 5rem;
+    min-width: 350px;
     padding: 1rem;
     margin-left: 2rem;
     margin-block-end: 1rem;
@@ -133,6 +135,7 @@ a:hover {
  
 .within-article.active {
     border-color: solid 4px #0944b991;
+
 }
 
 .content-2 {
@@ -142,7 +145,66 @@ a:hover {
 
 .job {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
+    justify-content: space-around;
+    gap: 3rem;     
+}
+
+.tail-end {
+flex: 2 2 60%;
+}
+
+.right-header-article {
+    line-height: 2rem;
+}
+
+.header-list-small {
+   color: rgb(131, 128, 128); 
+   line-height: 3rem;
+   font-size: smaller;
+}
+
+.quick-apply-button {
+    background-color: #e60278;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.button-bar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;}
+
+p { 
+   margin-top: 1rem;
+    }
+
+    .part-one {
+        margin-top: 2rem;
+    }
+
+    .part-one-one {
+        margin-top: 1rem;
+        line-height: 2rem;}
+
+.part-two {
+    margin-top: 1rem;
+    line-height: 2rem;  
+}
+
+.save-button {
+    color: #1243ac;
+    background-color: rgba(173, 216, 230, 0.694);
+    font-weight: 550;
+    border-radius: 8px;
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+ 
+.part-one-one-list {
+    margin-left: 1rem;
 }
