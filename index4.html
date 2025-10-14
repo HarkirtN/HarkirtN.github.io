@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/mockup.css">    
 </head>
 <body> 
+
     <div class="container">
        <div class="box"> Logo </div> 
        <div class="box"> profile </div>
@@ -150,7 +151,32 @@
                 <span> no bank deets </span> <br>
                 <span> <a href=" guide to protect"> learn to protect yourself</a></span>
             </div>
-            <div class="report job ad"> <form> Report job ad </form> 
+            <div class="report-job-ad"> 
+                <h4> Report job ad </h4> <br>
+
+                    <details>
+                    <summary>Report this job ad</summary>
+                    <form> 
+                        <div class="input-form">
+                            <label for="email"> <span class="label"> Your email:</span></label> <br><br>
+                            <input type="text" id="email" name="email"><br><br>
+                        </div>
+                        <div class="input-form">
+                             <label for="reasons"> <span class="label"> Reason for reporting a job:</span></label><br><br>
+                                <select id="reasons" name="reasons" aria-placeholder="Please select">
+                                    <option value="Please select">Please select </span></option>
+                                    <option value="Exploitation">Exploitation</option>
+                                    <option value="Misleading">Misleading</option>
+                                    <option value="Fake">Fake</option>
+                                </select><br><br>
+                        </div>
+                        <div class="input-form">
+                            <label for="message"> <span class="label"> Additional comments</span></label><br><br>
+                            <textarea name="message" rows="10" cols="60" placeholder="Message ..."> </textarea><br> 
+                        </div>
+                        <button type="submit" onclick="alert('submitted!')"> Report ad</button>
+                    </form> 
+                    </details>
             </div>
         </section>  
     </div>
