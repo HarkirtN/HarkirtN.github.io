@@ -38,7 +38,9 @@ padding-bottom: 1rem;
    width: 70%;
    padding-left: 2rem;
    padding-right: 2 rem;
+   padding-bottom: 1rem;
    cursor: pointer;
+
 }
 .expanded-sticky-searchbar {
     background-color: #051a49;
@@ -51,8 +53,13 @@ padding-bottom: 1rem;
 }
 
 .input-bar {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    min-width: 20rem;
     margin-inline-end: 1rem;
+    line-height: 1.5rem;
+    border: solid 2px white;
+    border-radius: 8px;
     background-color: white;
     color: rgba(128, 128, 128, 0.477);
     padding: 1px 100px 1px 10px;
@@ -60,10 +67,10 @@ padding-bottom: 1rem;
 
 .search-bars {
     display: inline-block;
-    margin-inline-start: 2rem;
+    margin-inline-start: 1rem;
     margin-inline-end: 2rem;
     padding: 10px;
-    border-radius: 8px;
+
     position: relative;
 }
 .search-button {
@@ -207,4 +214,39 @@ p {
  
 .part-one-one-list {
     margin-left: 1rem;
+}
+
+.report-job-ad {
+    display: block;
+    margin-top: 2rem;
+}
+
+#email {
+   width: 80%;
+   border: solid 2px lightgray;
+   border-radius: 8px;
+   padding: 0.5rem;
+}
+
+#reasons {
+    width: 83%;
+    border: solid 2px lightgray;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.label {
+    font-weight: 600;
+}
+
+.input-form {
+    margin-bottom: 0.8rem;
+}    
+
+.textarea {
+    border: solid 2px lightgray;
+}
+
+.button [type:submit] {
+    padding: 1rem;
 }
