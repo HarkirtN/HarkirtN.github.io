@@ -48,6 +48,35 @@
             <div class="box" id="box2"><img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2g5M2U5b3huZHVvcTdmdG55dG15MXZ3MTI4dmRhamRkbXlibGE2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uIJBFZoOaifHf52MER/giphy.gif" height=" 250" width="300"</img></div>
         </div>
         <article>
+            <h2>brain train</h2>
+
+         <p> Processing two lists simultaneously, equality and testing have been the exercises i delved into this week. 
+                It was a great summary of what i had learnt. There are three ways that this class of data can be processed.
+            <ol>
+                <li> if they belong to same class of data definitions i.e. two lists with single information, you can process as you would any data.</li>
+                <li> if they have two or more pieces of information (typically a structure) within the list then you can process with a auxillary function</li>
+                <li> if they require two seperate data defintions require four cond clauses </li>
+            </ol> 
+        </p>
+
+        <p> Equality is about checking through lists of arbiturary size. The book suggests a punnet square to look at the symmetry.
+            <ol> 
+                <li> empty a-list - empty b-list </li>
+                <li> empty a-list - cons b-list </li>
+                <li> cons a-list - empty b-list </li>
+                <li> cons a-list - cons b-list</li>
+            </ol> 
+            Then process each cond clause with the appropriate selectors (first a-list) (first b-list) (first b-list) (rest b-list).
+        </p>
+        <p> Testing function include the two lists as well as an expected result. It is suggested to use functions like <code> list=?</code>
+        or <code> equal?</code>. Both of which process the lists similarly where it compared  the correspoding fields. 
+    <em> NOTE: </em>
+         For unordered lists you will need to sort th lists first and then process them using <code> equal? </code>
+        </p>
+      <time datetime="2025-10-13">September 13th, 2025</time>   
+        </article>
+        
+        <article>
             <h2> out here braining</h2>
 
             <p> I have dipped into more search trees. I completed some exercises that look into directories and files.
