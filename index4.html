@@ -20,9 +20,7 @@
             </ul>
         </div>
     </div>
-
-
-    <div class="expanded-sticky-searchbar">
+<div class="expanded-sticky-searchbar">
         <div class="search-bars"> 
             <div class="search-bars">
                 <span class="input-title"> what</span>
@@ -36,34 +34,146 @@
                 <span class="search-button"> SEARCH </span>
             </div>
         </div>
-        <div class="refinement">
-        <div class="pills"> 
-            <span> work type </span>
-        </div> 
-        <div class="pills"> 
-            <span> remote </span>
+
+    <div class="refinement">
+            <div class="pills"> 
+                <details>
+                    <summary> <span> remote </span></summary>
+                    <form> 
+                        <input type="checkbox"  id="on-site" name="on-site" value="on-site">
+                        <label for="on-site"> On-site</label><br>
+                        <input type="checkbox" id="hybrid" name="hybrid" value="hybrid">
+                        <label for="hybrid"> Hybrid </label><br>
+                        <input type="checkbox" id="remote" name="remote" value="remote">
+                        <label for="remote"> Remote</label><br>
+                    </form>
+                </details>
+            </div> 
+            <div class="pills"> 
+                <details>
+                    <summary> <span> Classification </span></summary>
+                    <form> 
+                        <input type="checkbox"  id="banking" name="banking" value="banking">
+                        <label for="banking"> Banking</label><br>
+                        <input type="checkbox" id="Admin" name="admin" value="admin">
+                        <label for="admin"> Admin </label><br>
+                        <input type="checkbox" id="finance" name="finance" value="finance">
+                        <label for="finance"> Finance</label><br>
+                        <input type="checkbox" id="management" name="management" value="management">
+                        <label for="managment"> Management</label><br>
+                        <input type="checkbox" id="edu" name="edu" value="edu">
+                        <label for="edu"> Education & training</label><br>
+                    </form>
+                </details>
+            </div> 
+            <div class="pills"> 
+                <details>
+                    <summary> <span> Pay </span></summary>
+                        <details>
+                        <summary> <span> <a href="#annually"> Annually </a> </span> </summary>
+                                        <form id="annually"> 
+                                            <label> From NZD </label>
+                                                <input type="radio"  id="0" name="0" value="0">
+                                                <label for="0"> 0 </label><br>
+                                                <input type="radio" id="50k" name="50k" value="50k">
+                                                <label for="50k"> 50k </label><br>
+                                                <input type="radio" id="90k" name="90k" value="90k">
+                                                <label for="90k"> 90k </label><br>
+                                                <input type="radio" id="100k" name="100k" value="100k">
+                                                <label for="100k"> 100k </label><br>
+                                                <input type="radio" id="120k" name="120k" value="120k">
+                                                <label for="120k"> 120k </label><br>
+                                        </form>
+                                        <form id="annually"> 
+                                            <label> To NZD </label>
+                                                <input type="radio"  id="0" name="0" value="0">
+                                                <label for="0"> 0 </label><br>
+                                                <input type="radio" id="50k" name="50k" value="50k">
+                                                <label for="50k"> 50k </label><br>
+                                                <input type="radio" id="90k" name="90k" value="90k">
+                                                <label for="90k"> 90k </label><br>
+                                                <input type="radio" id="100k" name="100k" value="100k">
+                                                <label for="100k"> 100k </label><br>
+                                                <input type="radio" id="200k" name="200k" value="200k">
+                                                <label for="200k"> 200k </label><br>
+                                        </form>
+                        </details>
+                        <details>
+                        <summary> <span> <a href="#monthly"> Monthly </a> </span> </summary>
+                                        <form id="monthly"> 
+                                            <label> From NZD </label>
+                                                <input type="radio"  id="0" name="0" value="0">
+                                                <label for="0"> 0 </label><br>
+                                                <input type="radio" id="5k" name="5k" value="5k">
+                                                <label for="5k"> 5k </label><br>
+                                                <input type="radio" id="9k" name="9k" value="9k">
+                                                <label for="9k"> 9k </label><br>
+                                                <input type="radio" id="10k" name="10k" value="10k">
+                                                <label for="10k"> 10k </label><br>
+                                                <input type="radio" id="12k" name="12k" value="12k">
+                                                <label for="12k"> 12k </label><br>
+                                        </form>
+                                        <form id="monthly"> 
+                                            <label> To NZD </label>
+                                                <input type="radio"  id="2k" name="2k" value="2k">
+                                                <label for="2k"> 2k </label><br>
+                                                <input type="radio" id="5k" name="5k" value="5k">
+                                                <label for="5k"> 5k </label><br>
+                                                <input type="radio" id="9k" name="9k" value="9k">
+                                                <label for="9k"> 9k </label><br>
+                                                <input type="radio" id="10k" name="10k" value="10k">
+                                                <label for="10k"> 10k </label><br>
+                                                <input type="radio" id="20k" name="20k" value="20k">
+                                                <label for="20k"> 20k </label><br>
+                                        </form>
+                        </details>
+                        <details>
+                        <summary><span> <a href="#hourly"> Hourly </a> </span></summary>
+                                        <form id="hourly"> 
+                                            <label> From NZD </label>
+                                                <input type="radio"  id="$0" name="$0" value="$0">
+                                                <label for="$0"> $0 </label><br>
+                                                <input type="radio" id="$5" name="$5" value="$5">
+                                                <label for="$5"> $5 </label><br>
+                                                <input type="radio" id="$9" name="$9" value="$9">
+                                                <label for="$9"> $9 </label><br>
+                                                <input type="radio" id="$100" name="$100" value="$100">
+                                                <label for="$100"> $100 </label><br>
+                                                <input type="radio" id="$120" name="$120" value="$120">
+                                                <label for="$120"> $120 </label><br>
+                                        </form>
+                                        <form id="hourly"> 
+                                            <label> To NZD </label>
+                                                <input type="radio"  id="$2" name="$2" value="$2">
+                                                <label for="$2"> $2 </label><br>
+                                                <input type="radio" id="$15" name="$15" value="$15">
+                                                <label for="$15"> $15 </label><br>
+                                                <input type="radio" id="$20" name="$20" value="$20">
+                                                <label for="$20"> $20 </label><br>
+                                                <input type="radio" id="$100" name="$100" value="$100">
+                                                <label for="$100"> $100 </label><br>
+                                                <input type="radio" id="$200" name="$200" value="$200">
+                                                <label for="$200"> $200 </label><br>
+                                        </form>
+                        </details>
+                </details>
+            </div> 
+        
+            <div class="pills">    
+            <span> business dev</span> 
+            </div>
+            <div class="pills">
+                <span> medical </span>
+            </div>
+            <div class="pills">
+                <span> clinical </span>
+            </div>   
+            <div class="pills">  
+                <span> healthcare </span>
+            </div>
+            <div class="tool-tip"> i </div>
         </div>
-        <div class="pills">  
-            <span> classification</span>
-        </div>
-        <div class="pills">  
-            <span> price</span>
-        </div>
-        <div class="pills">    
-           <span> business dev</span> 
-        </div>
-        <div class="pills">
-            <span> medical </span>
-        </div>
-          <div class="pills">
-            <span> clinical </span>
-        </div>   
-        <div class="pills">  
-            <span> healthcare </span>
-        </div>
-        <div class="tool-tip"> i </div>
-        </div>
-    </div>
+</div>
 
     <section name=" search results"> 
     <div class="aside">
@@ -152,10 +262,8 @@
                 <span> <a href=" guide to protect"> learn to protect yourself</a></span>
             </div>
             <div class="report-job-ad"> 
-                <h4> Report job ad </h4> <br>
-
                     <details>
-                    <summary>Report this job ad</summary>
+                    <summary> Report this job ad </summary><br>
                     <form> 
                         <div class="input-form">
                             <label for="email"> <span class="label"> Your email:</span></label> <br><br>
