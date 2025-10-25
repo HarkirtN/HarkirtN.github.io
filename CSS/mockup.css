@@ -45,6 +45,14 @@ padding-bottom: 1rem;
 .expanded-sticky-searchbar {
     background-color: #051a49;
     color: white;
+    display: flexbox;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.refinement {
+display: flex;
+flex-direction: row 
 }
 
 .input-title {
@@ -54,7 +62,7 @@ padding-bottom: 1rem;
 
 .input-bar {
     display: flex;
-    flex-direction: row;
+    flex-direction: row no wrap;
     min-width: 20rem;
     margin-inline-end: 1rem;
     line-height: 1.5rem;
@@ -70,8 +78,8 @@ padding-bottom: 1rem;
     margin-inline-start: 1rem;
     margin-inline-end: 2rem;
     padding: 10px;
-
     position: relative;
+    
 }
 .search-button {
     background-color: #e60278;
@@ -80,7 +88,7 @@ padding-bottom: 1rem;
     text-align: center;
     padding: 0.5rem;
     width: 100%;  
-    position: relative;
+    position: sticky;
 }
 a:hover {
     cursor: pointer;
@@ -97,11 +105,16 @@ a:hover {
 }
 
 .tool-tip {
-    display: inline-block;
+    display: flexbox;
+    justify-content: space-evenly;
+    text-align: center;
     border: solid 2px rgba(255, 255, 255, 0.849);
-    border-radius: 10px;
+    border-radius: 50%;
     padding: 0.5rem;
 }
+
+
+
 .mini-results {
   display: flex; 
   margin-top: 2rem;
