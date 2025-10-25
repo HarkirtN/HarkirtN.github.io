@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated menu</title>
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+       --HEADER-BGCOLOR :#333; 
+       --HEADER-COLOR: whitesmoke
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    header {
+        background-color: var(--HEADER-BGCOLOR);
+        color: var(--HEADER-COLOR);
+    }
+
+    .header-line {
+        padding: 0.25rem 0.5rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    .menu-button {
+       background-color: transparent;
+       border: none;
+       width: 48px;
+       height: 48px;
+       display: flex; 
+       justify-content: center;
+       align-items: center;
+       position: relative;
+    }
+
+    .menu-icon1,
+    .menu-icon2, 
+    .menu-icon3 {
+       background-color: var(--HEADER-COLOR);
+       width: 40px;
+       height: 5px;
+       border-radius: 5px;
+       position: absolute;
+       transition: all 0.5s; 
+    }
+
+    .menu-icon1, 
+    .menu-icon2,
+    .menu-icon3 {
+       content: none;
+    }
+
+    .menu-icon1 {
+        transform: translate( -20px, 0px);
+    }
+
+    .menu-icon2 {
+        transform: translate(-20px, -10px);
+    }
+
+    .menu-icon3 {
+        transform: translate(-20px, 10px);
+    }
+
+   /*  .menu-icon::after {
+    transform: translate( 20px, 12px);
+    } */
+ 
+   .top-nav {
+    background-color: #333;
+    position: relative;
+   }
+    
+   /* Before: .menu-icon1:hover */
+   .menu-button:hover .menu-icon1 {
+    background-color: transparent
+   }
+
+   /* Before: .menu-icon2:hover */
+   .menu-button:hover .menu-icon2 {
+    transform: translateX(-20px) rotate(45deg);
+   }
+  
+   /* Before: .menu-icon3:hover */
+   .menu-button:hover .menu-icon3 {
+    transform: translateX(-20px) rotate(-45deg);
+   }
+
+   :is (header:hover, header:focus-within) nav {
+    display: block ;
+   }
+
+
+    nav {
+      display: none;
+      transform-origin: top center; 
+      animation: showmenu 0.5s ease-in-out forwards;
+    }
+
+    @keyframes showmenu {
+        0% {transform: scaleY(0); }
+        100% {transform: scaleY(1);}
+    } 
+
+   ul {
+       list-style-type: none;
+       display: flex;
+       flex-flow: column nowrap;
+    }
+
+   li {
+    padding: 0.5rem;
+    border-top: 1px solid var(--HEADER-COLOR);
+   }
+
+    li a {
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+   }
+
+   li a:any-link {
+    color: var(--HEADER-COLOR);
+    font-weight: lighter;
+    text-decoration: none;
+   }
+   
+   a:hover, a:focus {
+    transform: scaleX(1.1);
+    transition: all 0.5s;
+   }
+
+   /* a:hover {
+    transform: scale(1.2);
+    transition: all 0.3s;
+   } */
+
+
+    </style>
+</head>
+
+<body>
+    <header class="top-nav">
+        <section class="header-line"> 
+            <h1> Harkirt & co </h1> 
+            <button class="menu-button"> 
+                <div class="menu-icon1"> </div>
+                <div class="menu-icon2"> </div>
+                <div class="menu-icon3"> </div>
+            </button>
+        </section>
+
+        <nav>
+            <ul>
+                <li> <a href="#"> Food</a></li>
+                <li> <a href="#"> Drinks </a></li>
+                <li> <a href="#"> Sides </a></li>
+                <li> <a href="#"> Contact us </a></li>
+            </ul>
+        </nav> 
+    </header>   
+</body>
+</html>
