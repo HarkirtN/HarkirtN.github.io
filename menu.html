@@ -28,6 +28,10 @@
         color: var(--HEADER-COLOR);
     }
 
+    nav:hover {
+    display: block;
+   }
+
     .header-line {
         padding: 0.25rem 0.5rem;
         display: flex;
@@ -99,16 +103,11 @@
     transform: translateX(-20px) rotate(-45deg);
    }
 
-   :is (header:hover, header:focus-within) nav {
-    display: block ;
+   nav, .menu-icon1:hover {
+    display: block;
+    transform-origin: top center; 
+    animation: showmenu 0.5s ease-in-out forwards;
    }
-
-
-    nav {
-      display: none;
-      transform-origin: top center; 
-      animation: showmenu 0.5s ease-in-out forwards;
-    }
 
     @keyframes showmenu {
         0% {transform: scaleY(0); }
@@ -164,7 +163,7 @@
             </button>
         </section>
 
-        <nav>
+        <nav class="dropdown">
             <ul>
                 <li> <a href="#"> Food</a></li>
                 <li> <a href="#"> Drinks </a></li>
