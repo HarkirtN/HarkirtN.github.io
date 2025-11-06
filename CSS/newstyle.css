@@ -46,9 +46,18 @@
     grid-area: aside;
 }
 
+.polls {
+    grid-area: poll;
+}
+
 .entire-document {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 2fr 2fr 2fr 1fr;
-    
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr;
+    grid-template-areas: 
+    "header header header header"
+    "item1  item3  item3  aside" 
+    "item2  item3  item3  aside"
+    "poll   poll   poll   aside"
+    ;
 }
