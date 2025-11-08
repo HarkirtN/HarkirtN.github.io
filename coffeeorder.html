@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Masters</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .page {
+            height: 600px;
+            display: grid;
+            grid-column: 2fr 2fr 2fr 2fr;
+            grid-row: 2fr 2fr 2fr 2fr 2fr 2fr; 
+            gap: 2rem ;
+            grid-template-areas: 
+            "item1 item1 item1 item1"
+            "item2 item2 item3 item3"
+            "item2 item2 item4 item4"
+            " .      .   item4 item4"
+            " .    item5 item5    . "
+            " .    button button  . " ;}
+
+        .header {
+            padding-bottom: 1rem;
+            grid-area: item1;
+            font-size: larger;
+            text-align: center;
+            background-color: rgba(49, 23, 23, 0.969);
+            color: rgb(243, 216, 182);
+        }
+
+        .items {
+            grid-area: item2;
+            height: 89%;
+            padding-left: 1rem;
+            background-color: antiquewhite;
+            border-radius: 8px;
+            box-shadow: -1.5px 1.5px 10px rgb(166, 162, 162);
+        }
+
+        img {
+            margin-top: 1rem;
+        }
+
+        .order-name {
+            grid-area: item3;
+        }
+
+        .credit-card {
+            grid-area: item4;
+        }
+       
+        .sum-of-order {
+            grid-area: item5;
+        }
+
+        .place-order-button {
+            grid-area: button;
+        }
+
+      /*  .coffee-order {
+            display: grid;
+            list-style: none;
+            padding-left: 0;
+            grid-template-columns: auto 1fr auto;
+            grid-template-rows: repeat(3, 1fr);
+            /* grid-template-areas: 
+            "quantity product charged"
+            "quantity product charged"
+            "quantity product charged"; */
+        
+       
+       /*  .coffee-order p {
+            border-bottom: solid 2px rgb(243, 216, 182);
+        }
+
+        .coffee-order .no-border {
+            border-bottom: none;
+        } */ 
+
+       /*  .quantity {
+            grid-area: quantity;
+            max-width: 10px;
+            line-height: 2rem;
+        }
+
+        .product {
+            grid-area: product;
+            line-height: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .charged {
+            grid-area: charged;
+            line-height: 2rem;
+            padding-right: 1.5rem;
+        } */
+
+        .coffee-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .coffee {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: solid 2px rgb(243, 216, 182);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .coffee p {
+            margin: 0;
+        }
+
+        .flex-spacer {
+            flex-grow: 3;
+        }
+
+        /* .quantity {
+            padding-left: 1rem;
+        } */
+
+        .money {
+            padding-right: 2rem;
+        } 
+
+        .no-border {
+            border: solid 2px antiquewhite;
+        }
+
+        .light-brown {
+            color: rgb(128, 92, 58);
+            font-size:x-small;
+            font-weight: lighter;
+            padding-bottom: 1rem;
+        }
+
+        .entry-area {
+            position: relative;
+            height: 80px;
+            line-height: 80px;
+        }
+        
+        .order-name {
+            background-color: antiquewhite;
+            padding-left: 20px;
+            border-radius: 8px;
+            box-shadow: -1.5px 1.5px 10px rgb(166, 162, 162);
+        }
+
+        input {
+            position: absolute;
+            width: 98%;
+            text-align: center;
+            outline: none;
+            font-size: 1.2rem;
+            padding: 0px 50px 0px 50px ;
+            line-height: 60px;
+            border: solid 2px rgb(128, 92, 58);
+            border-radius: 50px;
+            background: transparent;
+            transition: 0.1s ease;
+            z-index: 1111;
+        }
+
+        .label-line {
+            position: absolute;
+            color: rgb(128, 92, 58);
+            margin: 0 20px;
+            background-color: antiquewhite;
+            transition: 0.2s ease;
+        }
+
+        input:focus, input:valid {
+            color: rgb(128, 92, 58);
+            border: solid 2px rgb(128, 92, 58);
+        }
+
+        input:focus + .label-line, 
+        input:valid + .label-line {
+            color: rgb(128, 92, 58);
+            height: 30px;
+            line-height: 30px;
+            padding: 0 12px;
+            transform: translate(-10px, -16px) scale(0.88);
+            z-index: 1111;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="page"> 
+        <div class="header"> 
+            <img src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png" alt="coffee-logo" width="30px" height="30px">
+        Coffee Masters </div>
+
+        <div class="items"> 
+            <h3> ITEMS </h3>
+
+            <ul class="coffee-list">
+                <li>
+                    <div class="coffee">
+                        <span class="quantity">1x</span>
+                        <div>
+                            <p>coffee</p>
+                            <p class="light-brown">yum yum</p>
+                        </div>
+                        <div class="flex-spacer"></div>
+                        <span class="money">$0.69</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="coffee">
+                        <span class="quantity">1x</span>
+                        <div>
+                            <p>coffee</p>
+                            <p class="light-brown">yum yum</p>
+                        </div>
+                        <div class="flex-spacer"></div>
+                        <span class="money">$0.69</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="coffee no-border">
+                        <span class="quantity">1x</span>
+                        <div>
+                            <p>coffee</p>
+                            <p class="light-brown">yum yum</p>
+                        </div>
+                        <div class="flex-spacer"></div>
+                        <span class="money">$0.69</span>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+
+        <div class="order-name"> 
+            <h3>NAME </h3> 
+            <div class="entry-area">
+                <input type="text" required> 
+                <div class="label-line"> Name for order </div>
+            </div>
+        </div>
+
+        <div class="credit-card"> item4 </div>
+        <div class="sum-of-order"> item5 </div>
+        <div class="place-order-button"> <button> Place order </button></div>
+    </div>
+</body>
+</html>
