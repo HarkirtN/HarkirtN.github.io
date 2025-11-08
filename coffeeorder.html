@@ -34,7 +34,7 @@
 
         .items {
             grid-area: item2;
-            height: 89%;
+            height: 95%;
             padding-left: 1rem;
             background-color: antiquewhite;
             border-radius: 8px;
@@ -47,20 +47,37 @@
 
         .order-name {
             grid-area: item3;
+            background-color: antiquewhite;
+            
+            border-radius: 8px;
+            box-shadow: -1.5px 1.5px 10px rgb(166, 162, 162);
         }
 
         .credit-card {
             grid-area: item4;
+            background-color: antiquewhite;
+            border-radius: 8px;
+            box-shadow: -1.5px 1.5px 10px rgb(166, 162, 162);
         }
        
         .sum-of-order {
             grid-area: item5;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 1.5rem;
+            margin-top: 12rem;
         }
 
         .place-order-button {
             grid-area: button;
         }
-
+ 
+        h3 {
+            color: rgb(128, 92, 58);
+            padding-left: 1.5rem;
+            font-size: medium;
+        }
       /*  .coffee-order {
             display: grid;
             list-style: none;
@@ -137,30 +154,25 @@
             color: rgb(128, 92, 58);
             font-size:x-small;
             font-weight: lighter;
+            padding-top: 0.5rem;
             padding-bottom: 1rem;
         }
+    
 
-        .entry-area {
+       /*  .entry-area {
             position: relative;
             height: 80px;
             line-height: 80px;
-        }
-        
-        .order-name {
-            background-color: antiquewhite;
-            padding-left: 20px;
-            border-radius: 8px;
-            box-shadow: -1.5px 1.5px 10px rgb(166, 162, 162);
         }
 
         input {
             position: absolute;
             width: 98%;
-            text-align: center;
+            text-align: start;
             outline: none;
             font-size: 1.2rem;
             padding: 0px 50px 0px 50px ;
-            line-height: 60px;
+            line-height: 50px;
             border: solid 2px rgb(128, 92, 58);
             border-radius: 50px;
             background: transparent;
@@ -170,6 +182,7 @@
 
         .label-line {
             position: absolute;
+            text-align: start;
             color: rgb(128, 92, 58);
             margin: 0 20px;
             background-color: antiquewhite;
@@ -189,6 +202,74 @@
             padding: 0 12px;
             transform: translate(-10px, -16px) scale(0.88);
             z-index: 1111;
+        } */ 
+
+        .enter-details {
+            position: relative;
+            margin-bottom: 1rem;
+            margin-left: 1.5rem;
+            height: 70px;
+            line-height: 70px;
+        }
+
+        input {
+            position: absolute;
+            width: 98%;
+            line-height: 50px;
+            background: transparent;
+            border-radius: 50px;
+            border: solid 2px rgb(128, 92, 58);
+            font-size: 1.2rem;
+            outline: none;
+        }
+
+        input:focus, input:valid {
+            position: absolute;
+            width: 98%;
+            line-height: 50px;
+            background: transparent;
+            border-radius: 50px;
+            border: solid 2px rgb(128, 92, 58);
+            font-size: 1.2rem;
+            
+        }
+
+        .label {
+            position: absolute;
+            line-height: 25px;
+            padding-left: 2px;
+            padding-right: 2px;
+            top: -11px;
+            right: 495px;
+            z-index: 1;
+            background-color: antiquewhite;
+        }
+
+        .label-line {
+            position: absolute;
+            line-height: 25px;
+            padding-left: 2px;
+            padding-right: 2px;
+            top: -11px;
+            right: 450px;
+            z-index: 1;
+            background-color: antiquewhite;
+        }
+
+        .subtotal {
+            flex-basis: 50%;
+            text-align: center;
+        }
+
+        button {
+            color: rgb(56, 37, 18);
+            background-color: rgb(219, 155, 94);
+            outline: none;
+            border: solid 2px rgb(219, 155, 94);
+            width: 100%;
+            border-radius: 50px;
+            padding: 0.5rem;
+            font-size: large;
         }
 
     </style>
@@ -208,33 +289,33 @@
                     <div class="coffee">
                         <span class="quantity">1x</span>
                         <div>
-                            <p>coffee</p>
-                            <p class="light-brown">yum yum</p>
+                            <p>Cappuccino</p>
+                            <p class="light-brown">Lite foam</p>
                         </div>
                         <div class="flex-spacer"></div>
-                        <span class="money">$0.69</span>
+                        <span class="money">$3.35</span>
                     </div>
                 </li>
                 <li>
                     <div class="coffee">
                         <span class="quantity">1x</span>
                         <div>
-                            <p>coffee</p>
-                            <p class="light-brown">yum yum</p>
+                            <p>Cappuccino</p>
+                            <p class="light-brown">Lite milk <br> Double espresso </p>
                         </div>
                         <div class="flex-spacer"></div>
-                        <span class="money">$0.69</span>
+                        <span class="money">$3.85</span>
                     </div>
                 </li>
                 <li>
                     <div class="coffee no-border">
                         <span class="quantity">1x</span>
                         <div>
-                            <p>coffee</p>
-                            <p class="light-brown">yum yum</p>
+                            <p>Croissant</p>
+                            <p class="light-brown">Butter</p>
                         </div>
                         <div class="flex-spacer"></div>
-                        <span class="money">$0.69</span>
+                        <span class="money">$2.45</span>
                     </div>
                 </li>
             </ul>
@@ -243,14 +324,32 @@
 
         <div class="order-name"> 
             <h3>NAME </h3> 
-            <div class="entry-area">
+            <div class="enter-details">
                 <input type="text" required> 
-                <div class="label-line"> Name for order </div>
+                <div class="label-line"> Name for order </div>  
             </div>
         </div>
 
-        <div class="credit-card"> item4 </div>
-        <div class="sum-of-order"> item5 </div>
+        <div class="credit-card"> 
+            <h3> PAYMENT </h3>
+            <div class="enter-details">
+                <input type="text" required> 
+                <div class="label"> Card details </div>  
+            </div>
+            <div class="enter-details">
+                <input type="text" required> 
+                <div class="label"> CCV number </div>  
+            </div>
+        </div>   
+        <div class="sum-of-order"> 
+            <div class="subtotal"> Subtotal: </div>
+            <div class="subtotal"> $9.65 </div>
+            <div class="subtotal"> Tax: </div>
+            <div class="subtotal"> $0.82 </div>
+            <div class="subtotal"> Total </div>
+            <div class="subtotal"> $10.47 </div>
+        </div>
+
         <div class="place-order-button"> <button> Place order </button></div>
     </div>
 </body>
