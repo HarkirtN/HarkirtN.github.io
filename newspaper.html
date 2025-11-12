@@ -4,7 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newspaper article </title>
-    <link rel="CSS" href= "CSS/newstyle.css"> 
+    <style>
+   
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
+
+        * {
+   box-sizing: border-box; 
+}
+
+.header {
+    grid-area: header;
+}
+
+.box1 {
+    grid-area: box1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr;
+    grid-template-areas: 
+    "item1 item3 item3"
+    "item2  item3 item3";
+}
+
+.item1 {
+    grid-area: item1;
+}
+
+.item2 {
+    grid-area: item2;
+}
+
+.item3 {
+    grid-area: item3;
+}
+
+.polls {
+    grid-area: polls;
+    display: flex;
+    flex-basis: 90%;
+    padding: 0.5rem; 
+}
+
+.little-section {
+    display: flex;
+    flex-basis: 30%;
+    border-left: solid 1px black;
+    text-align: center;
+}
+
+.box2 {
+    grid-area: box2;
+}
+
+.aside {
+    grid-area: aside;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "item4 item4"
+    "item4 item4"
+    "item5 item6"
+    "item5 item6";
+}
+
+.item4 {
+    grid-area: item4;
+}
+
+.item5 {
+    grid-area: item5;
+}
+
+.item6 {
+    grid-area: item6;
+}
+
+.entire-document {
+    height: 600px;
+    display: grid;
+    gap: 0.5rem;
+    grid-column: 1fr 2fr 1fr;
+    grid-row: 2fr 2fr 0.5fr 2fr;
+    grid-template-areas: 
+    "header header header"
+    "box1   box1   aside"
+    "box1   box1   aside"
+    "polls  polls  aside"
+    "box2   box2   aside";
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1, .libre-barcode-39-text-regular {
+  font-family: "Libre Barcode 39 Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5rem
+}
+
+ nav, ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+    list-style: none;
+}
+
+.double-border {
+    border-bottom: double 3px black;
+}
+
+</style>
+
 </head>
 
 <div class="entire-document">
@@ -17,14 +136,14 @@
         </div>
         <div class="middle-header"> 
             <div class="date"> 
-                <p> 31st October 2025 </p>
-                <p> Today's paper</p>
+                <p> 31st October 2025 <br>
+                Today's paper</p>
             </div>
                 <h1> The News </h1>  
                 <p> widget </p>
             </div>
    
-        <nav>
+        <nav class="double-border">
             <ul>
                 <li> Business </li>
                 <li> Lifestyle </li>
@@ -34,7 +153,8 @@
             </ul>
         </nav>
     </div>
-<div>
+
+<div class="box1">
     <div class="item1"> 
         <h2> Story 1 </h2>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ullam eum. 
@@ -50,25 +170,26 @@
     </div>
 </div>
 
+
 <section class="polls"> 
     <h5> The latest polls in 2025 </h5>
-    <div> 
+    <div class="little-section"> 
         <div> Picture placeholder </div>
         <p> Mayor elections </p>
         <p> Place one vs. place two</p>
     </div>
-    <div>
+    <div class="little-section">
        <div> Picture placeholder </div>
         <p> Mayor elections </p>
         <p> Place one vs. place two</p> 
     </div>
-    <div>
+    <div class="little-section">
         <div> Picture placeholder </div>
         <p> Mayor elections </p>
         <p> Place one vs. place two</p>
     </div>
 </section>
-<div class="item7">
+<div class="box2">
         <h3> Story 7 </h3>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 </div>
