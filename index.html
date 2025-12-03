@@ -48,6 +48,44 @@
             <div class="box" id="box2"><img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2g5M2U5b3huZHVvcTdmdG55dG15MXZ3MTI4dmRhamRkbXlibGE2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uIJBFZoOaifHf52MER/giphy.gif" height=" 250" width="300"</img></div>
         </div>
         <article>
+            <h2>Vectors and abstract time</h2>
+            <p> Vectors is like a list and there are built-in function within Dr Racket 
+                but unlike lists, you can retrieve items using an index as opposed to going 
+                from the beggining to the end. Practiced vectors using <code> (sub1 index)</code>
+                where you use the 'list' type shape and recursion to find the index. 
+            </p>
+            <p> Abstract running time relationship between size of input and number of natural recursions.
+                Here are a few described in the book:
+                <ul>
+                    <li><code>(define (contains-doll? a-list) (cond
+                                  [(empty? a-list) false]
+                                  [else (cond
+                                          [(symbol=? 'doll (first a-list)) true]
+                                          [else (contains-doll? (rest a-list))])]))</code> <br>
+                                        It is dependent on where the 'doll symbol is within the list, therefore we average our
+                                        likelihood to find 'doll' using <code> N/2</code>
+                    </li>
+                <li> <code>(define (sort-list alon) (cond
+                           [(empty? alon) empty]
+                           [else (insert (first alon) (sort-list (rest alon)))]))
+
+                    (define (insert n alon) (cond
+                          [(empty? alon) (cons n empty)]
+                          [(< n (first alon)) (cons n alon)]
+                          [(>= n (first alon)) (cons (first alon) (insert n (rest alon)))]))</code> <br>
+                         Two natural recursing happening at the same time this is expressed as <code> N squared</code></li>
+                <li><code>(define (maxi alon) (cond
+                      [(empty? (rest alon)) (first alon)]
+                      [else (cond
+                              [(> (maxi (rest alon)) (first alon)) (maxi (rest alon))]
+                              [else (first alon)])]))</code><br>
+                            there are two recursions in the first line, so this is doubled with every original recursion - expressed as 
+                        <code>2 powerof N</code></li>
+                </ul>
+            </p>
+        <time datetime="2025-12-3">December 3rd, 2025</time> 
+        </article>
+        <article>
             <h2> Braining out man</h2>
             <p> The last few weeks have been about generative recursion. This concept is somewhat different to structural recursion because it 
                 looks at the problem at hand and asks "is this trivally solvable?" If the problem requires you break it up into smaller sections
