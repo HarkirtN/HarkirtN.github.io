@@ -1,4 +1,5 @@
 // packaging data into groups
+//objects are like unordered lists
 const person = {
     //key: value
     name: Harky,
@@ -46,3 +47,63 @@ const dog = {
 } ;
 
 dog.speak () // "bark bark"
+
+//nested objects (data groups)
+const me = {
+    name : {
+        first : "Tina", 
+        lastName : "Turner" , 
+    },
+    location : {
+        city : "queenstown" ,
+        country : "newZealand" ,
+        zipCode : "2117",
+    },
+} ;
+
+console.log(me.name.lastName) // "turner"
+console.log (me.location.country) // "newZealand"
+// to access objects use the square brackets ['key']
+
+//context, may see 'this' which refers to the object that you're working on
+const me = {
+    name : {
+        first : "Tina", 
+        lastName : "Turner" , 
+    },
+    location : {
+        city : "queenstown" ,
+        country : "newZealand" ,
+        zipCode : "2117",
+    },
+getAddress() {
+    return 
+    '${this.name.first} ${this.name.lastName}
+    ${this.location.city} ${this.location.zipCode}
+    ${this.location.country}';
+},
+};
+
+console.log(me.getAddress()); //you need to give 'this' the object then call the function
+//if you call 'this' outside the object it will just refer to window 
+//remeber 'this' is requires you to think of the context you're referring to
+// you can bind the method permanently to the object using functionName.bind(objectName)
+
+//Arrays 
+//are like ordered lists uses [] brackets
+const daysOfWeek = [
+    "monday" ,
+    "tuesday" ,
+    "wednesday" ,
+    "thursday" ,
+    "friday" ,
+    "saturday" ,
+    "sunday" ,
+];
+console.log(daysOfWeek); //will return all the list
+console.log(daysOfWeek[0]); // retunrs monday only
+console.log(daysOfWeek[6]); // returns sunday
+// Note it is like vectors in scheme - use index to extract information
+//push() function will add a new element to an array
+//pop() function removes and returns last element in an array
+//join() function converts an array into string
