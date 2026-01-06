@@ -18,12 +18,12 @@ console.log(person.name); // will result in name only
 
 const person1 = {
     name : Lilly,
-    ageRange = "25-35",
+    ageRange : "25-35",
 };
 
 const person2 = {
     name : Fred ,
-    ageRange = "65-75" ,
+    ageRange : "65-75" ,
 };
 
 function suggestMusic(person) {
@@ -40,7 +40,7 @@ suggestMusic(person1) // "we think you will like taylor swift."
 suggestMusic(person2) // "you'll enjoy elvis, right?"
 
 const dog = {
-    name : Romy 
+    name : Romy ,
     speak : function () {
         console.log("bark bark");
     },
@@ -49,7 +49,7 @@ const dog = {
 dog.speak () // "bark bark"
 
 //nested objects (data groups)
-const me = {
+const me2 = {
     name : {
         first : "Tina", 
         lastName : "Turner" , 
@@ -78,9 +78,9 @@ const me = {
     },
 getAddress() {
     return 
-    '${this.name.first} ${this.name.lastName}
-    ${this.location.city} ${this.location.zipCode}
-    ${this.location.country}';
+    '${this.name.first} ${this.name.lastName}'
+    '${this.location.city} ${this.location.zipCode}'
+    '${this.location.country}';
 },
 };
 
