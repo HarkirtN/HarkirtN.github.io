@@ -107,3 +107,27 @@ console.log(daysOfWeek[6]); // returns sunday
 //push() function will add a new element to an array
 //pop() function removes and returns last element in an array
 //join() function converts an array into string
+
+const cities = [
+    "seattle" ,
+    "auckland" ,
+    "hong kong" ,
+    "brisbane" ,
+] ;
+
+// method one 
+for (let i = 0; i < cities.length; i++) {
+    console.log(cities[i]); // placing i means you are looping ever city
+    //it stops when the i reaches the length of the cities 
+}
+// result 
+// "seattle" ,
+//  "auckland" ,
+//  "hong kong" ,
+//  "brisbane" 
+
+//method two
+cities.forEach(function (city) {
+    console.log(city);
+}); // this takes a function and passes through each item on the array
+// city is the function 
