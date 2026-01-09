@@ -131,3 +131,31 @@ cities.forEach(function (city) {
     console.log(city);
 }); // this takes a function and passes through each item on the array
 // city is the function 
+
+// DOM document object model methods that canbe called from javascript 
+// and interact with CSS
+// essentially you can change styles using javascript i.e.
+const redSquare = document.querySelector(".redSquare"); 
+// the above grabs the selector from CSS - this one is called redsquare 
+
+redSquare.style.backgroundColor = "//choose any colour//" ;
+//now you can change the background color 
+
+//NOTE: querySelector will find and return just the first thing
+//queryselectorall gives all instances on the thing, useful for lists
+
+<ul>
+    <li class='target'> this one </li>
+    <li class='target'> this one </li>
+    <li> Not this </li>
+    <li class='target'>this one </li>
+    <li> Not this </li>
+</ul>
+
+const changeElements = document.querySelectorAll('.target');
+for (let i = 0; i < changeElements.length ; i++) {
+    const currentElement = changeElements[i]; 
+    currentElement.innerText = "i changed only those with this class";
+} ;
+
+
