@@ -48,32 +48,61 @@
             <div class="box" id="box2"><img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2g5M2U5b3huZHVvcTdmdG55dG15MXZ3MTI4dmRhamRkbXlibGE2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uIJBFZoOaifHf52MER/giphy.gif" height=" 250" width="300"</img></div>
         </div>
         <article>
+            <h2>More about state variables and memory</h2>
+            <p> I'm currently stuck on this coloured sqaures guessing game. Where first player chooses two colours.
+                Second player will need to try to guess the colour and in the correct position in as few of guesses
+                they can. The example responses look something like this:
+            </p>
+            <p> <code>(master) <br>
+                    (master-check 'red 'red) <br>
+                    'NothingCorrect <br>
+                    (master-check 'black 'pink) <br>
+                    'OneColorOccurs <br><br>
+
+                    example2:
+                    (master) <br>
+                    (master-check 'red 'red) <br>
+                    'Pefect <br>
+                </code></p>
+            <p> The exercise i'm struggling with modifying the response so that the output gives the response statement
+                as well as the number guess made by the second player.
+            </p>
+            <h3> My thoughts on how to tackle this:</h3>
+            <p> I was thinking along the lines of tally up/keeping count of the guess everytime master-check was called.
+                There would also be a condition that states <code>(not (symbol=? function 'Perfect) then (+1 and reattempt)</code>
+                So i'm trying to use an accumaltor because that keeps track and tallys, but i heading into road blocks with this.
+                I know i need to modify the function the provides these response, but they will need to be an auxillary function that
+                simulatneously keeps count of guesses i.e. a local definition ?
+            </p>
+           <time datetime="2026-1-15">December 15th, 2026</time> 
+        </article>
+        <article>
             <h2> GUIs, event listeners and state variables</h2>
-            <p> This week i learnt about state variables with examples of GUIS i.e. address-book and 
-                traffic light functions. State variables are needed for programs that require memory.
-                In many GUIs, the variables will be changed, and the program will need to store its current value to memory.  
-                The example i worked through was adding to address-book or current traffic light colour changed to 'next' light colour.</p>
-                <p> <em> NOTE: I will use set! to change variables, once changed, every variable(x) will be changed to new value.</em></p>
+                <p> This week i learnt about state variables with examples of GUIS i.e. address-book and 
+                    traffic light functions. State variables are needed for programs that require memory.
+                    In many GUIs, the variables will be changed, and the program will need to store its current value to memory.  
+                    The example i worked through was adding to address-book or current traffic light colour changed to 'next' light colour.</p>
+                    <p> <em> NOTE: I will use set! to change variables, once changed, every variable(x) will be changed to new value.</em></p>
 
             <h3> Event listeners </h3>
-            <p> On frontend masters, i went through event listeners, which essentially is functions called once an event 
-                has occured. So a click of a button that sends an alert, or typing colour into the input box that then 
-                changes the colour of the box. 
-            </p>
+                <p> On frontend masters, i went through event listeners, which essentially is functions called once an event 
+                    has occured. So a click of a button that sends an alert, or typing colour into the input box that then 
+                    changes the colour of the box. 
+                </p>
 
             <h3> Template for event listener function </h3>
-            <p> Extract the variables : </p>
-            <p><code> const = </code> <em> variable </em> <code>document.querySelector("<em> .class</em>")</code></p>
-            <p> function call : </p>
-            <p> <code> <em>variable.</em>addEventListener("what-you-are-listening-for? click/keyup/touch" , function ({<br>
-            alert('alert-message'); <br>
-        });</code></p>
-        <p> <em>NOTE: There is event delegation where you can apply a call function to all events by using the parent element. 
-            You would do this if you wanted the same alert when buttons on page were clicked.
-        </em></p>
+                <p> Extract the variables : </p>
+                <p><code> const = </code> <em> variable </em> <code>document.querySelector("<em> .class</em>")</code></p>
+                <p> function call : </p>
+                <p> <code> <em>variable.</em>addEventListener("what-you-are-listening-for? click/keyup/touch" , function ({<br>
+                alert('alert-message'); <br>
+            });</code></p>
+            <p> <em>NOTE: There is event delegation where you can apply a call function to all events by using the parent element. 
+                You would do this if you wanted the same alert when buttons on page were clicked.
+            </em></p>
         <time datetime="2026-1-10">December 10th, 2026</time>
         </article>
-        
+
         <article>
             <h2> New year new brain waves</h2>
             <p> This week is off to a rocky start, but I am attempting inexact numbers and understanding the pros and cons.</p>
