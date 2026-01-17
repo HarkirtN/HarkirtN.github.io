@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    grid-area: nav;
+}
+
+.clear {
+    grid-area: clear;
+}
+
+.backspace {
+    grid-area: backspace;
+}
+
+.divide {
+    grid-area: divide;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.multiply {
+    grid-area: multiply;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.subtract {
+    grid-area: subtract;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.addition {
+    grid-area: addition;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.equal {
+    grid-area: equal;
+}
+
+.entire-page {
+    display: grid;
+    width: 50%;
+    height: 500px;
+    align-content: center;
+    border: 1px solid black;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav   nav   nav       nav"
+    "clear clear backspace divide"
+    "seven eight nine      multiply"
+    "four  five  six       subtract"
+    "one   two   three     addition"
+    "zero  zero  zero      equal";
+}
