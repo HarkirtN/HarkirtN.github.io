@@ -2,9 +2,9 @@
     box-sizing: border-box;
 }
 
-.nav-bar {
+ .nav-bar {
     grid-area: nav;
-}
+} 
 
 .clear {
     grid-area: clear;
@@ -76,10 +76,8 @@
 
 .entire-page {
     display: grid;
-    width: 50%;
     height: 500px;
-    align-content: center;
-    border: 1px solid black;
+    justify-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
@@ -90,3 +88,21 @@
     "one   two   three     addition"
     "zero  zero  zero      equal";
 }
+
+.container {
+    width: 50%;
+    color: black;
+} 
+/* .container {
+    width: 50%;
+}
+
+.entire-page {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.item1 {
+    flex: 1;
+} */
