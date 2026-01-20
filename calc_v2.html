@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>version two</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        gap: 0.8%;
+        background-color: black;
+        width: 800px;
+    }
+
+    .box-1 {
+        border: 1px solid #e0dedb;
+        flex-basis: 10%;
+        min-height: 75px; 
+        background-color: #e0dedb; 
+        margin-bottom: 9px;
+        text-align: center;
+    }
+
+    .box-2 {
+        border: 1px solid #e0dedb;
+        flex-basis: 10%;
+        min-height: 75px;
+        background-color: #e0dedb;
+        margin-bottom: 9px;
+        text-align: center;
+    }
+
+    .box-3 {
+        border: 1px solid #e0dedb;
+        flex-basis: 10%;
+        min-height: 75px;
+        background-color: #e0dedb;
+        margin-bottom: 9px;
+        text-align: center;
+    }
+
+    .box-4 {
+        border: 1px solid rgb(244, 152, 32);
+        flex-basis: 10%;
+        min-height: 75px;
+        background-color: rgb(244, 152, 32);
+        margin-bottom: 9px;
+        text-align: center;
+        
+    }
+
+    .zero {
+        flex-basis: 31.5%;
+        text-align: center;
+    }
+
+    .bigger-space {
+        flex-basis: 21%;
+        text-align: center;
+    }
+
+    .input {
+        flex-basis: 42.5%;
+        border: 1px solid black;
+        min-height: 75px; 
+        background-color: black; 
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .text-decoration {
+        color: antiquewhite;
+        font-weight: bolder;
+        font-size: large;
+    }
+
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: large;
+    } 
+
+    .button-clear {
+        border: 1px solid black;
+        background-color: #e0dedb;
+        padding: 25px 75px;
+        font-weight: bold;
+    }
+
+     .button {
+        border: 1px solid black;
+        background-color: #e0dedb;
+        padding: 25px 30px;
+        font-weight: bold;
+    }
+
+    .button-orange {
+        border: 1px solid black;
+        background-color: rgb(244, 152, 32);
+        padding: 25px 30px;
+        font-weight: bold;
+    }
+
+    .button-zero {
+        border: 1px solid black;
+        background-color: #e0dedb;
+        padding: 25px 115px;
+        font-weight: bold;
+    }
+
+    </style>
+
+</head>
+<div class="flex-container">
+    <div class="box-1 input"> 1 </div>
+ </div>
+<div class="flex-container">
+    <div class="box-1 bigger-space center"> <button class="button-clear"> C </button> </div>
+    <div class="box-2 center"><button class="button"> <- </button> </div>
+    <div class="box-4 text-decoration center"> <button class="button-orange"> / </button> </div>
+ </div>
+ <div class="flex-container">
+    <div class="box-1 center"> <button class="button">7</button> </div>
+    <div class="box-2 center"><button class="button">8</button> </div>
+    <div class="box-3 center"><button class="button">9</button> </div>
+    <div class="box-4 text-decoration center"> <button class="button-orange"> X</button> </div>
+ </div>
+ <div class="flex-container">
+    <div class="box-1 center"><button class="button">4</button> </div>
+    <div class="box-2 center"><button class="button">5</button> </div>
+    <div class="box-3 center"><button class="button">6</button></div>
+    <div class="box-4 text-decoration center"><button class="button-orange">-</button> </div>
+ </div>
+ <div class="flex-container">
+    <div class="box-1 center"><button class="button">1</button> </div>
+    <div class="box-2 center"><button class="button">2</button></div>
+    <div class="box-3 center"><button class="button">3</button> </div>
+    <div class="box-4 text-decoration center"><button class="button-orange">+</button> </div>
+ </div>
+ <div class="flex-container">
+    <div class="box-1 zero center"><button class="button-zero">0</button></div>
+    <div class="box-4 text-decoration center"><button class="button-orange">=</button> </div>
+ </div>
+</html>
