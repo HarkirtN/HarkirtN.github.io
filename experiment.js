@@ -71,3 +71,12 @@ doStuff("B");
 console.log(B); // B is a parameter for do stuff, but won't work here because B has finished //
 console.log(C); // was created inside the "doStuff" function, so out of scope//
 console.log(F); // created was created in the beggining, that what matters//
+
+//built ns 
+const testStringOne = "The quick brown fox jumps over the lazy dog";
+const testStringTwo = "Mirror mirror, am i cute?";
+
+const lookUp = "cute";
+
+console.log(testStringOne.includes(lookUp)); // false it does not contain 'cute'
+console.log(testStringTwo.includes(lookUp)); // true, .includes is a builtin function that looks for string 
