@@ -40,6 +40,7 @@ input.addEventListener("change", function () {
 
 //event delegation is when you want to have something occur to all events 
 //example is alert of a div of buttons 
+//it allows you to attach addevent listener to parent element instead of every child element
 <div class= "button-container">
     <button> 1 </button>
     <button> 2 </button>
