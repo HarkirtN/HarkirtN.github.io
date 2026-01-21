@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>version two</title>
+    <script src="calc-JS.js"></script>
     <style>
     * {
         box-sizing: border-box;
@@ -64,13 +65,19 @@
         text-align: center;
     }
 
-    .input {
+    .input input {
         flex-basis: 42.5%;
         border: 1px solid black;
         min-height: 75px; 
         background-color: black; 
         margin-bottom: 0;
-        text-align: center;
+        text-align: end;
+    }
+
+    input {
+        width: 330px;
+        color: whitesmoke;
+        font-size: x-large;
     }
 
     .text-decoration {
@@ -119,33 +126,35 @@
 
 </head>
 <div class="flex-container">
-    <div class="box-1 input"> 1 </div>
+    <div class="input"><form>
+        <input type="text" id="input" name="input">
+    </form></div>
  </div>
 <div class="flex-container">
     <div class="box-1 bigger-space center"> <button class="button-clear"> C </button> </div>
     <div class="box-2 center"><button class="button"> <- </button> </div>
-    <div class="box-4 text-decoration center"> <button class="button-orange"> / </button> </div>
+    <div class="box-4 text-decoration center"> <button class="button-orange" onclick="bufferInput('/')"> / </button> </div>
  </div>
  <div class="flex-container">
-    <div class="box-1 center"> <button class="button">7</button> </div>
-    <div class="box-2 center"><button class="button">8</button> </div>
-    <div class="box-3 center"><button class="button">9</button> </div>
-    <div class="box-4 text-decoration center"> <button class="button-orange"> X</button> </div>
+    <div class="box-1 center"><button class="button number" onclick="bufferInput(7)">7</button> </div>
+    <div class="box-2 center"><button class="button number" onclick="bufferInput(8)">8</button> </div>
+    <div class="box-3 center"><button class="button number" onclick="bufferInput(9)">9</button> </div>
+    <div class="box-4 text-decoration center"> <button class="button-orange" onclick="bufferInput('*')"> X</button> </div>
  </div>
  <div class="flex-container">
-    <div class="box-1 center"><button class="button">4</button> </div>
-    <div class="box-2 center"><button class="button">5</button> </div>
-    <div class="box-3 center"><button class="button">6</button></div>
-    <div class="box-4 text-decoration center"><button class="button-orange">-</button> </div>
+    <div class="box-1 center"><button class="button number" onclick="bufferInput(4)">4</button> </div>
+    <div class="box-2 center"><button class="button number" onclick="bufferInput(5)">5</button> </div>
+    <div class="box-3 center"><button class="button number" onclick="bufferInput(6)">6</button></div>
+    <div class="box-4 text-decoration center"><button class="button-orange" onclick="bufferInput('-')">-</button> </div>
  </div>
  <div class="flex-container">
-    <div class="box-1 center"><button class="button">1</button> </div>
-    <div class="box-2 center"><button class="button">2</button></div>
-    <div class="box-3 center"><button class="button">3</button> </div>
-    <div class="box-4 text-decoration center"><button class="button-orange">+</button> </div>
+    <div class="box-1 center"><button class="button number" onclick="bufferInput(1)">1</button> </div>
+    <div class="box-2 center"><button class="button number" onclick="bufferInput(2)">2</button></div>
+    <div class="box-3 center"><button class="button number" onclick="bufferInput(3)">3</button> </div>
+    <div class="box-4 text-decoration center"><button class="button-orange" onclick="bufferInput('+')">+</button> </div>
  </div>
  <div class="flex-container">
-    <div class="box-1 zero center"><button class="button-zero">0</button></div>
-    <div class="box-4 text-decoration center"><button class="button-orange">=</button> </div>
+    <div class="box-1 zero center"><button class="button-zero number" onclick="bufferInput(0)">0</button></div>
+    <div class="box-4 text-decoration center"><button class="button-orange" onclick="compute()">=</button> </div>
  </div>
 </html>
