@@ -1,98 +1,65 @@
 * {
     box-sizing: border-box;
 }
-.container {
-    height: 400px;
-}
 
-.entire-page {
-    width: 50%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "nav-bar nav-bar nav-bar nav-bar"
-    "body     body    body    aside"
-    "body     body    body    aside"
-    "body     body    body    aside"
-    "body     body    body    aside"
-    "body     body    body    aside";
-}
-
-.nav-bar {
-    grid-area: nav-bar;
+.calculator {
     background-color: black;
+    color: white;
+    width: 400px;
 }
 
-.aside {
-    grid-area: aside;
+.screen {
+    color: white;
+    font-size: larger;
+    text-align: right;
+    padding: 20px 5px;
+    min-height: 500px
 }
 
-.body {
-    grid-area: body;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    " line-one line-one line-one"
-    " line-two line-two line-two"
-    " line-three line-three line-three"
-    " line-four line-four line-four"
-    " line-five line-five line-five";
-}
-
-.line-one {
-    grid-area: line-one;
+.button-row {
     display: flex;
-    border-right: 1px solid black;
-    
+    justify-content: space-between;
+    align-content: stretch;
+    margin-bottom: 0.5%;
+    gap: 0.5%;
 }
 
-.line-two {
-    grid-area: line-two;
-    display: flex;
+.cal-button:last-child{
+    background-color: rgb(178, 175, 175);
+    color: black;
+    height: 100px;
+    width: 40%;
+    border: none;
+    cursor: pointer;
+    font-size: large;
 }
 
-.line-three {
-    grid-area: line-three;
-    display: flex;
+.cal-button{
+    background-color: rgb(250, 133, 7);
+    color: black;
+    height: 100px;
+    width: 40%;
+    border: none;
+    cursor: pointer;
+    font-size: large;
 }
 
-.line-four{
-    grid-area: line-four;
-    display: flex;
+.cal-button:hover {
+    background-color: #ebebeb;
 }
 
-.line-five {
-    grid-area: line-five;
-    display: flex;
+.cal-button:active {
+    background-color: #bbbcbe;
 }
 
-.bigger-space {
-flex-grow: 0.6;
-border-left: 1px solid black;
-border-right: 1px solid black;
+.double {
+    width: 83%;
 }
 
-.numbers {
-    width: 200px;
-    display: flex;
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    justify-content: center;
-}
-.numbers:first-child {
-    width: 200px;
-    display: flex;
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    justify-content: center;
+.triple {
+    width: 125%;
 }
 
-.aside, ul {
-    list-style: none;
+.cal-button:last-child {
+    padding-bottom: 0;
 }
