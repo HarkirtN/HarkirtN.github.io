@@ -43,7 +43,8 @@ function formatBuffer() {
 //brian's way 
 
 let buffer = '0';
-
+let runningTotal = 0;
+let previousOperator = null;
 const screen = document.querySelector('.screen');
 
 function buttonClick(value) {
@@ -66,8 +67,67 @@ if (buffer === '0') {
 //console.log(buffer)
 }
 
+function handleMath(value) {
+  if (buffer === '0') {
+  // do nothing 
+    return;
+  }
+  
+  const intBuffer = parseInt(buffer); // buffer is string so changes to integar
+  if (runningTotal === 0) {
+    runningTotal = intBuffer;
+  } else {
+    flushOperation(intBuffer);
+  }
+  previousOperator = value;
+  buffer = '0';
+}
+
+function flushOperation(intBuffer) {
+    if (previousOperator === '+') {
+        runningTotal += intBuffer
+    } else if (previousOperator === '-') {
+        runningTotal -= intBuffer
+    } else if (previousOperator === 'x') {
+        runningTotal *= intBuffer
+    } else if (previousOperator === '/') {
+        runningTotal /= intBuffer
+    }
+}
+
 function handleSymbol(symbol) {
 //console.log('symbol')
+switch (symbol) {
+    case 'C': 
+    buffer = '0'
+    break;
+    case '=':
+       // console.log('equals');
+       if (previousOperator === null) {
+        // no need for math
+        return;
+       }
+       flushOperation(parseInt(buffer)); // next lines initialise 
+       previousOperator = null;
+       buffer = "" + runningTotal; //revert back to string
+       runningTotal = 0;  
+        break;
+        case '<=':
+            if (buffer.length === 1) { // if length is only 1 didgit if you backspace should equal 0
+                buffer = '0';
+            } else {
+                buffer = buffer.substring(0, buffer.length - 1); //removes one off 
+            }
+           // console.log('back arrow');
+            break;
+            case '+':
+            case '-':
+            case '/':
+            case 'x':
+                handleMath(symbol)
+                break;
+
+}
 }
 
 function initial {
