@@ -107,7 +107,8 @@ switch (symbol) {
         // no need for math
         return;
        }
-       flushOperation(parseInt(buffer)); // next lines initialise 
+       flushOperation(parseInt(buffer)); 
+       // next lines initialise 
        previousOperator = null;
        buffer = "" + runningTotal; //revert back to string
        runningTotal = 0;  
