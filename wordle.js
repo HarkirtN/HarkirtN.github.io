@@ -9,7 +9,7 @@
 // }
 
 
-const lines = document.querySelectorAll(".line");
+/* const lines = document.querySelectorAll(".line");
 for (const line of lines) {
     disableLine(line)
 }
@@ -57,11 +57,50 @@ function compareWords (Array, chosenWord){
 };
 
 function compareLetters(A, B) {
-   if (Array.charAt[0] === chosenWord.charAt[0]) {
+   if (Array.charAt[x] === chosenWord.charAt[x) {
     aBox.style.backgroundColor = greenColor
    } else if (Array.every(char => chosenWord.includes(char))) {
     aBox.style.backgroundColor = redColor
    } else aBox.style.backgroundColor = greyColor
-};
+}; */
 
-const chosenWord = ...
+//brian's way //
+const letters = document.querySelectorAll('.box');
+const loadingDiv = document.querySelector('.info-bar');
+const ANSWER_LENGTH = 5; // is creaming case because its constant
+
+async function init() {
+ let currentGuess = '';
+
+
+    function addLetter(letter) {
+        if (currentGuess.length < ANSWER_LENGTH) {
+            currentGuess += letter;
+        } else {
+            currentGuess = currentGuess.substring(0, currentGuess.length-1) + letter; 
+            //lops of the ketter at 5 and replaces with new letter
+            // say f g h j k and you type r it will replace k with r
+        }
+    }
+    
+    document.addEventListener('keydown', function handleKeyPress(event) {
+        const action = event.key;
+        console.log(action);
+
+        if (action === 'Enter') {
+            commit();
+        } else if (action === 'Backspace') {
+            backspace();
+        } else if (isLetter(action)) {
+            addLetter(action.toLocaleUpperCase())
+        } else {
+            //do nothing
+        }
+    });
+}
+init();
+
+function isLetter(letter) {
+    return /^[a-zA-Z]$/.test(letter);
+}
+
