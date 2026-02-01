@@ -9,15 +9,15 @@
             box-sizing: border-box;
         }
 
-        .screen {
+        body {
             width: 600px;
         }
 
-        h2 {
+        h1 {
             text-align: center;
         }
 
-        .line {
+        .scoreboard {
             display: flex;
             justify-content: center;
             flex-basis: 30%;
@@ -25,45 +25,122 @@
             margin-bottom: 0.5rem;
         }
 
-        .box {
+        .letter {
             border: 1px solid rgb(155, 154, 154);
             min-height: 50px;
             min-width: 50px;
             text-align: center;
             color: black;
         }
-        
-        input {
-            border: none;
-            height: 46px;
-            width: 45px;
-            text-align: center;
-            justify-content: center;
-            color: black; 
-            font-size: larger;
-        }
 
-        .grey {
-            background-color: grey;
+        .close {
+            background-color: rgb(185, 138, 9);
             color: beige;
         }
 
-        .green {
+        .right {
             background-color: rgb(93, 151, 7);
             color: beige;
         }
 
-        .red {
+        .wrong {
             background-color: rgb(214, 4, 4);
             color: beige;
         }
+        
+        .invalid {
+            animation: flash 1s;
+        }
 
+        @keyframes flash {
+            5% {
+                border-color: red;
+            }
+
+            100% {
+                border-color: #ccc;
+            }
+        }
+
+        @keyframes rainbow {
+            100%, 
+            0% {
+                color: purple;
+            }
+            8% {
+                color: blue;
+            }
+
+            16% {
+                color: green;
+            }
+            25% {
+                color: yellow;
+            }
+
+            33% {
+                color: orange ;
+            }
+            58% {
+                color: red;
+            }
+            75% {
+                color: pink;
+            }
+            83% {
+                color: blueviolet;
+            }
+            91% {
+                color: bisque;
+            }
+        }
+
+        .winner {
+            animation: rainbow 4s infinite linear;
+        }
     </style>
 
 </head>
-<body class="screen">
-<h2> WORDLE </h2>
-    <div class="line">
+ <body>
+    <header class="nav-bar">
+        <h1 class="name"> Wordle</h1>
+    </header>
+    <div class="info-bar">
+        <div class="spiral">loading ...</div>
+    </div>
+    <div class="scoreboard">
+        <div class="letter" id="letter-0"></div>
+        <div class="letter" id="letter-1"></div>
+        <div class="letter" id="letter-2"></div>
+        <div class="letter" id="letter-3"></div>
+        <div class="letter" id="letter-4"></div>
+        <div class="letter" id="letter-5"></div>
+        <div class="letter" id="letter-6"></div>
+        <div class="letter" id="letter-7"></div>
+        <div class="letter" id="letter-8"></div>
+        <div class="letter" id="letter-9"></div>
+        <div class="letter" id="letter-10"></div>
+        <div class="letter" id="letter-11"></div>
+        <div class="letter" id="letter-12"></div>
+        <div class="letter" id="letter-13"></div>
+        <div class="letter" id="letter-14"></div>
+        <div class="letter" id="letter-15"></div>
+        <div class="letter" id="letter-16"></div>
+        <div class="letter" id="letter-17"></div>
+        <div class="letter" id="letter-18"></div>
+        <div class="letter" id="letter-19"></div>
+        <div class="letter" id="letter-20"></div>
+        <div class="letter" id="letter-21"></div>
+        <div class="letter" id="letter-22"></div>
+        <div class="letter" id="letter-23"></div>
+        <div class="letter" id="letter-24"></div>
+        <div class="letter" id="letter-25"></div>
+        <div class="letter" id="letter-26"></div>
+        <div class="letter" id="letter-27"></div>
+        <div class="letter" id="letter-28"></div>
+        <div class="letter" id="letter-29"></div>
+    </div>
+   <!--  <div class="line">
         <div class="box"><input type="text" maxlength="1"></div>
         <div class="box"><input type="text" maxlength="1"></div>
         <div class="box"><input type="text" maxlength="1"></div>
@@ -97,7 +174,8 @@
         <div class="box"><input type="text" maxlength="1"></div>
         <div class="box"><input type="text" maxlength="1"></div>
         <div class="box"><input type="text" maxlength="1"></div>
-    </div>
+    </div> -->
+
     <script src="wordle.js"></script>
-</body>
+</body> 
 </html>
