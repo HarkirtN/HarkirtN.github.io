@@ -71,21 +71,55 @@ const ANSWER_LENGTH = 5; // is creaming case because its constant
 
 async function init() {
  let currentGuess = '';
+ let currentRow = 0;
 
 
     function addLetter(letter) {
         if (currentGuess.length < ANSWER_LENGTH) {
-            currentGuess += letter;
+            currentGuess += letter; //adding on the letter to the current guess i.e. f=r=i
         } else {
+            //replaces last letter
             currentGuess = currentGuess.substring(0, currentGuess.length-1) + letter; 
             //lops of the ketter at 5 and replaces with new letter
             // say f g h j k and you type r it will replace k with r
         }
+        letters[ANSWER_LENGTH * currentRow + currentGuess.length -1].innerText = letter;
+        //keep track of the letter 
+        // because its starts at 0, you need to -1 so when you ask for charAt it will know 
+        // answer length is 5 and multiply by rows will letter the DOM know what space it need tp write next letter
+    }
+
+    async function commit() {
+        if (currentGuess.length != ANSWER_LENGTH) {
+            //do nothing 
+            return;
+        }
+
+        //TODO validate the word 
+
+        //TODO all marking is correct, close, wrong 
+
+        //TODO did they win or lose
+
+        //once commited then the buffers initialise 
+        currentRow++;
+        currentGuess = '';
+    }
+    
+    const res = await fetch("https://words.dev-apis.com/word-of-the-day");
+    const resObj = await res.json();
+    const word = resObj.word.toUpperCase(); // make sure everything is in uppercase for consistancy
+
+    function backspace() {
+        currentGuess = currentGuess.substring(0, currentGuess-1); //take length minus 1
+        letters[ANSWER_LENGTH * currentRow + currentGuess.length].innerText = '';
+        // you want to remove '-1' for the DOM and replace with empty string so then i you
+        //backspace again it will move to the next letter back and remove one 
     }
     
     document.addEventListener('keydown', function handleKeyPress(event) {
         const action = event.key;
-        console.log(action);
+       // console.log(action);
 
         if (action === 'Enter') {
             commit();
@@ -104,3 +138,9 @@ function isLetter(letter) {
     return /^[a-zA-Z]$/.test(letter);
 }
 
+function setLoading() {
+    loadingDiv.classList.toggle('show', isLoading);
+    //this is a boolean where you grab the class 'hidden' and applies if true 
+    //toggle adds or removes a CSS class element - so i would add show when i want to 
+    //show the loading sign, once i get my word i will change loading Div to false
+}
