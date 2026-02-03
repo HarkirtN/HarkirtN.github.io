@@ -1,3 +1,4 @@
+// my solution 
 //eventlistener that lets you type a letter into the div
 // const letter = document.querySelector(".line")
 
@@ -65,7 +66,7 @@ function compareLetters(A, B) {
 }; */
 
 //brian's way //
-const letters = document.querySelectorAll('.box');
+const letters = document.querySelectorAll('.letter');
 const loadingDiv = document.querySelector('.info-bar');
 const ANSWER_LENGTH = 5; // is creaming case because its constant
 
@@ -83,11 +84,12 @@ async function init() {
             //lops of the ketter at 5 and replaces with new letter
             // say f g h j k and you type r it will replace k with r
         }
-        letters[ANSWER_LENGTH * currentRow + currentGuess.length -1].innerText = letter;
+
+        letters[ANSWER_LENGTH * currentRow + currentGuess.length - 1].innerText = letter;
         //keep track of the letter 
         // because its starts at 0, you need to -1 so when you ask for charAt it will know 
         // answer length is 5 and multiply by rows will letter the DOM know what space it need tp write next letter
-    }
+    };
 
     async function commit() {
         if (currentGuess.length != ANSWER_LENGTH) {
@@ -98,7 +100,29 @@ async function init() {
         //TODO validate the word 
 
         //TODO all marking is correct, close, wrong 
+        const guessParts = currentGuess.split("");
+        const map = makeMap(wordparts); // count occurence in fetched word 
+        console.log(map);
 
+         for (let i = 0; i < ANSWER_LENGTH; i++) {
+            //declare it being correct
+            if (guessParts[i] === wordparts[i]) {
+                letters[currentRow * ANSWER_LENGTH + i].classList.add("correct"); 
+                //talk to DOM saying letters is currentrow, 5 letters and add i - add the class list correct
+                map[guessParts[i]]--; // says to recurse and n - 1 the return occurence
+            }
+         }
+
+         for (let i = 0 ; i < ANSWER_LENGTH; i++) {
+            if (guessParts[i] === wordparts[i]) {
+                //do nothing, already done 
+            } else if (wordparts[i].includes(guessParts[i]) && map[guessParts[i]] > 0) {
+                letters[currentRow * ANSWER_LENGTH + i].classList.add("close");
+                map[guessParts[i]]--; 
+            } else {
+                letters[currentRow * ANSWER_LENGTH + i].classList.add("wrong")
+            }
+         }
         //TODO did they win or lose
 
         //once commited then the buffers initialise 
@@ -107,8 +131,9 @@ async function init() {
     }
     
     const res = await fetch("https://words.dev-apis.com/word-of-the-day");
-    const resObj = await res.json();
+    const resObj = await res.json(); //similar to stringify
     const word = resObj.word.toUpperCase(); // make sure everything is in uppercase for consistancy
+    const wordparts = word.split(""); // split the word into single letters - thats what split does 
 
     function backspace() {
         currentGuess = currentGuess.substring(0, currentGuess-1); //take length minus 1
@@ -126,7 +151,7 @@ async function init() {
         } else if (action === 'Backspace') {
             backspace();
         } else if (isLetter(action)) {
-            addLetter(action.toLocaleUpperCase())
+            addLetter(action.toUpperCase()) //converted to uppercase to allow consistency
         } else {
             //do nothing
         }
@@ -135,7 +160,7 @@ async function init() {
 init();
 
 function isLetter(letter) {
-    return /^[a-zA-Z]$/.test(letter);
+    return /^[a-zA-Z]$/.test(letter); //give it parameters 
 }
 
 function setLoading() {
@@ -143,4 +168,17 @@ function setLoading() {
     //this is a boolean where you grab the class 'hidden' and applies if true 
     //toggle adds or removes a CSS class element - so i would add show when i want to 
     //show the loading sign, once i get my word i will change loading Div to false
+}
+
+function makeMap (Array) { // this function counts the occurence of letter
+    const obj = (i);
+    for (let i = 0; i < Array.length; i++) { // just means recurse 
+        const letter = Array[i] // to simplify rather than writing arany[i]
+        if (obj[letter]) {
+            obj[letter]++; //count how many array[i] occur using recurse 
+        } else {
+            obj[letter] = 1; 
+        }
+        return obj;
+    }
 }
