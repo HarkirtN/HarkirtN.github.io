@@ -8,27 +8,40 @@
         * {
             box-sizing: border-box;
         }
-
-        body {
-            width: 600px;
+        html {
+            justify-items: center;
         }
+
+        
 
         h1 {
             text-align: center;
         }
 
         .scoreboard {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
             justify-content: center;
-            flex-basis: 30%;
-            gap: 1%;
-            margin-bottom: 0.5rem;
+            gap: 3%;
+        }
+
+        .spiral {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: turn 0.5s infinite;
+        }
+
+        @keyframes turn {
+             100% {
+                transform: rotate(360deg);
+             }
         }
 
         .letter {
             border: 1px solid rgb(155, 154, 154);
-            min-height: 50px;
-            min-width: 50px;
+            min-height: 70px;
+            min-width: 70px;
             text-align: center;
             color: black;
         }
@@ -38,7 +51,7 @@
             color: beige;
         }
 
-        .right {
+        .correct {
             background-color: rgb(93, 151, 7);
             color: beige;
         }
@@ -103,7 +116,7 @@
 </head>
  <body>
     <header class="nav-bar">
-        <h1 class="name"> Wordle</h1>
+        <h1 class="name winner"> Wordle</h1>
     </header>
     <div class="info-bar">
         <div class="spiral">loading ...</div>
