@@ -69,11 +69,20 @@ function compareLetters(A, B) {
 const letters = document.querySelectorAll('.letter');
 const loadingDiv = document.querySelector('.info-bar');
 const ANSWER_LENGTH = 5; // is creaming case because its constant
+const ROUNDS = 6; // used later to validate whether win or lose - stop from extra keypresses 
 
 async function init() {
  let currentGuess = '';
  let currentRow = 0;
+ let isLoading = true;
 
+const res = await fetch("https://words.dev-apis.com/word-of-the-day");
+const resObj = await res.json(); //similar to stringify
+const word = resObj.word.toUpperCase(); // make sure everything is in uppercase for consistancy
+const wordparts = word.split(""); // split the word into single letters - thats what split does
+let done = false; //initialise done variable 
+setLoading(false); 
+isLoading = false;
 
     function addLetter(letter) {
         if (currentGuess.length < ANSWER_LENGTH) {
@@ -96,10 +105,27 @@ async function init() {
             //do nothing 
             return;
         }
+         
+        // validate the word 
+        isLoading = true; //we are loading something from an API
+        setLoading(true);
+        const res = await fetch("https://words.dev-apis.com/validate-word", {
+            method: "POST", 
+            body: JSON.stringify({ word: currentGuess})
+        });
 
-        //TODO validate the word 
+        const resObj = await res.json();
+        const validWord = resObj.validWord;
+        // const { validWOrd } = resObj
 
-        //TODO all marking is correct, close, wrong 
+        isLoading = false;
+        setLoading = false;
+
+        if (!validWord) {
+            markInvalidWord();
+            return; // return needed so it doesnt move forward to guess onto next line
+        }
+        //all marking is correct, close, wrong 
         const guessParts = currentGuess.split("");
         const map = makeMap(wordparts); // count occurence in fetched word 
         console.log(map);
@@ -123,17 +149,22 @@ async function init() {
                 letters[currentRow * ANSWER_LENGTH + i].classList.add("wrong")
             }
          }
-        //TODO did they win or lose
-
-        //once commited then the buffers initialise 
+         //once commited then the buffers initialise 
         currentRow++;
-        currentGuess = '';
+        
+        if (currentGuess === word) {
+            //win
+            alert ('you win!');
+            done = true;
+            document.querySelector('.name').classList.add(".winner");
+         } else if (currentRow === ROUNDS) {
+            alert('you lose, the word id ${word}');
+            done = true;
+         }
+       currentGuess = ''; // move guess at bottom because if it above the word then you passing an empty string which 
+       // will never be correct === word 
     }
     
-    const res = await fetch("https://words.dev-apis.com/word-of-the-day");
-    const resObj = await res.json(); //similar to stringify
-    const word = resObj.word.toUpperCase(); // make sure everything is in uppercase for consistancy
-    const wordparts = word.split(""); // split the word into single letters - thats what split does 
 
     function backspace() {
         currentGuess = currentGuess.substring(0, currentGuess-1); //take length minus 1
@@ -141,8 +172,26 @@ async function init() {
         // you want to remove '-1' for the DOM and replace with empty string so then i you
         //backspace again it will move to the next letter back and remove one 
     }
+
+    function markInvalidWord {
+        alert('Not a valid word!');
+
+       for (let i = 0; i < ANSWER_LENGTH; i++) {
+        letters[currentRow * ANSWER_LENGTH + i].classList.remove("invalid");
+
+        setTimeout(function () { 
+           letters[currentRow * ANSWER_LENGTH + i].classList.add("invalid") 
+        }, 10); // time in milisecs in the end 
+       } //you can't remove anything that isnt 'added' so last bit should be .add
+       // when it recurses then you can remove then add again
+    }
     
     document.addEventListener('keydown', function handleKeyPress(event) {
+        if (done || isLoading) {
+            //do nothing 
+            return;
+        }
+
         const action = event.key;
        // console.log(action);
 
@@ -173,7 +222,7 @@ function setLoading() {
 function makeMap (Array) { // this function counts the occurence of letter
     const obj = (i);
     for (let i = 0; i < Array.length; i++) { // just means recurse 
-        const letter = Array[i] // to simplify rather than writing arany[i]
+        const letter = Array[i] // to simplify rather than writing array[i]
         if (obj[letter]) {
             obj[letter]++; //count how many array[i] occur using recurse 
         } else {
