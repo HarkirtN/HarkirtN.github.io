@@ -48,6 +48,29 @@
             <div class="box" id="box2"><img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2g5M2U5b3huZHVvcTdmdG55dG15MXZ3MTI4dmRhamRkbXlibGE2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uIJBFZoOaifHf52MER/giphy.gif" height=" 250" width="300"</img></div>
         </div>
         <article>
+            <h2> ✨ Wordle reflections ✨ </h2>
+            <ul>
+                <li>Use <code>Post</code> when asking for data from servers instead of <code>fetch</code></li>
+                <li>to iterate through a list <code> for loop </code> is used </li>
+                <li> the code <code> [ANSWER_LENGTH * currentRow + currentGuess.length - 1]</code> provides you a position when you are working with grid type divs</li>
+                <li> break the problems into smaller pieces i.e. add letter, commit, backspace all individual functions</li>
+                <li> to do nothing you just <code> return </code></li>
+                <li>using a variable to indicate when an action is complete and use this to let DOM know different states i.e. <code> done = false or true </code> same as <code> isLoading = true or false </code></li>
+                <li>this sets out paramaters for the <input type="text"> <code>/^[a-zA-Z]$/.test(letter)</code></li>
+                <li> make sure to keep strings consist i.e. all uppercase or lower - convert your input to reflect this</li>
+            </ul>
+
+            <p> a more complicated function is the makeMap function that counts the ccurence of a certain letter. I plan to play around and break the code to understand this 
+                concept better. But brian uses it for <code> close </code> function which needs to know the occurence of the letters
+                to then indicate (using yellow/orange background) that there is another 'same' letter and in the wrong place from whats guessed.
+                Otherwise if two of the same letters are guessed the game will terminate at the first and neglect occurences thereafter i.e. 
+                "POOLS"  but you've entered "STOOL" yellow red yellow yellow yellow 
+            </p>
+
+            <h3> <em> <strong> WORDLE game is now broken so will go back to refix the bug</strong></em></h3>
+            <time datetime="2026-2-7">Feburary 7th, 2026</time> 
+        </article>
+        <article>
             <h2>Calculator reflection </h2>
             <p> I completed a calculator project. 
                 <ul>Things learnt:
@@ -59,7 +82,7 @@
                     <li>Running totals, previous operators all accumaltors should be initialised with if statements</li>
                 </ul>
             </p>
-            <time datetime="2026-1-27">December 27th, 2026</time> 
+            <time datetime="2026-1-27">January 27th, 2026</time> 
         </article>
         <article>
             <h2>More about state variables and memory</h2>
