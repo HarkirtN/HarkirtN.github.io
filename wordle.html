@@ -38,6 +38,17 @@
              }
         }
 
+        .info-bar {
+            visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .show {
+            visibility: visible;
+        }
+
         .letter {
             border: 1px solid rgb(155, 154, 154);
             min-height: 70px;
@@ -119,7 +130,7 @@
         <h1 class="name"> Wordle</h1>
     </header>
     <div class="info-bar">
-        <div class="spiral">loading ...</div>
+        <div class="spiral show">loading ...</div>
     </div>
     <div class="scoreboard">
         <div class="letter" id="letter-0"></div>
