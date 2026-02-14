@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <style>
+     :root {
+  --white: #f9faff;
+  --platinum: #e3e4e8;
+  --windowsurfing: #32779b;
+  --marina: #5a91c7;
+  --gray: #9a9a9a;
+  --onyx: #3c3d44;
+  --charcoal: #343c47;
+  --corners: 24px 0;
+  --corners-sm: 10px 0;
+  --base-font-size: 1rem;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: var(--base-font-size);
+    font-family: "inter", sans-serif;
+    background-color: var(--platinum);
+    color: var(--onyx);
+}
+
+main {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: var(--corners);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.projects {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3rem;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h2 {
+    margin: 0;
+    font-size: var(--base-font-size);
+    text-transform: uppercase;
+    color: var(--windowsurfing);
+    letter-spacing: 0.25em;
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    border-radius: var(--corners);
+}
+
+.project ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project li {
+    background-color: var(--marina);
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: var(--corners-sm);
+    font-size: calc(var(--base-font-size) * 0.85);
+}
+
+.project img {
+    grid-row: 1/2; /* moves the img from second item on gric=d to first*/
+}
+
+@media (min-width: 750px) {
+    :root {
+        --base-font-size : 1.125rem;
+    }
+    .wrapper {
+        padding: 5rem;
+    }
+    @media (min-width: 850px) { /* makes the breakpoint different for project so the img doesn't get too small*/
+        main {
+            text-align: left;
+        }
+    .project {
+        grid-template-columns: 1fr 1fr;
+    }
+    .project img {
+        grid-row: auto; /* put the img back to original to the side*/
+    }
+    .project ul {
+        justify-content: flex-start; /*push the li side by side on desktop view*/
+    }
+    }
+    
+}
+
+
+    </style>
+</head>
+<html>
+<div class="wrapper">
+<main>
+<h2>Projects</h2>
+<div class="projects">
+    <article class="project">
+    <div class="text">
+    <h3> Practical CSS Layouts </h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Veritatis ipsum rem, assumenda eligendi repellendus, 
+        veniam a minus ullam sunt numquam earum magni eveniet facere 
+        dicta quaerat atque! Labore, quas suscipit?</p>
+    <ul> 
+        <li> HTML</li>
+        <li>CSS</li>
+        <li>javascript</li>
+        <li>SVG</li>
+    </ul>
+    </div>
+    <img src="">
+    </article>
+    <article class="project">
+    <div class="text">
+    <h3> Practical CSS Layouts </h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Veritatis ipsum rem, assumenda eligendi repellendus, 
+        veniam a minus ullam sunt numquam earum magni eveniet facere 
+        dicta quaerat atque! Labore, quas suscipit?</p>
+    <ul> 
+        <li> HTML</li>
+        <li>CSS</li>
+        <li>javascript</li>
+        <li>SVG</li>
+    </ul>
+    </div>
+    <img src="">
+    </article>
+    <article class="project">
+    <div class="text">
+    <h3> Practical CSS Layouts </h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Veritatis ipsum rem, assumenda eligendi repellendus, 
+        veniam a minus ullam sunt numquam earum magni eveniet facere 
+        dicta quaerat atque! Labore, quas suscipit?</p>
+    <ul> 
+        <li> HTML</li>
+        <li>CSS</li>
+        <li>javascript</li>
+        <li>SVG</li>
+    </ul>
+    </div>
+    <img src="">
+    </article>
+</div>
+</main>
+</div>
+
+</html>
