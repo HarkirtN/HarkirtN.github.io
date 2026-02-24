@@ -137,7 +137,7 @@ function initial {
         buttonClick(event.target.innerText); // do buttonclick which targets the innertext of the button/div
     });
 }
- init (); // show it outside of scope 
+ initial (); // show it outside of scope 
 
  function rerender () {
     screen.innerText = buffer //it will make buffer = screen everytime i rerender
