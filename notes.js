@@ -315,7 +315,8 @@ const aaa = 3; // number
   ]
   console.log(alpha[2]); // should retrieve "c"
 
-  //objects 
+  //object all data that points to one end point 
+  // array is a list with a beginning and end point 
   const book = {
     title: "Hello world",
     author: {
@@ -327,3 +328,159 @@ const aaa = 3; // number
         console.log("publishing your book");
     },
   };
+
+  const licenseAge = 17;
+  const driverEdu = true;
+
+  function checkAge(licenseAge, driverEdu) {
+    if ((licenseAge >= 16) && (driverEdu = true)) {
+        console.log("you can get license!");
+        return
+    } else if (licenseAge < 16) {
+        console.log ("you must be 16 or above")
+    } else {
+        console.log ('you need to complete your education');
+    };
+  }
+
+  const weather = temperature > 75 ? "hot" : "not hot";
+
+  //switch statements good for comparing one variable, many conditions to check or using "==="
+  // not for comparing diff variables or "< > && \\"
+
+  function getSeason (month) {
+    switch (month) {
+    case 12: 
+    case 1: 
+    case 2 : 
+        return "winter";
+    case 3:
+    case 4:
+    case 5:
+        return "spring";
+    case 6: 
+    case 8:
+    case 7 : 
+        return "summer";
+    case 9:
+    case 10:
+    case 11: 
+        return "Fall";
+        default: 
+        return "invalid month"
+  }
+}
+
+// basic syntax for loop
+for (let i = 0; i < x; i++) {
+ console.log(i);
+}
+
+//function evenNumbers(number) {
+//   for (let i = 1; i <= 10; i++) {
+//    console.log(`$[number]`);
+/*
+
+function addNumbers(evenNumbers) {
+    for (let i = 0; i > 10; i++) {
+        evenNumbers + ; 
+    }
+} */
+
+//create an array first 
+const evenNumbers = [];
+for (let i = 1; i <=10; i++) {
+    evenNumbers.push(i * 2)
+}
+
+//sum or addNumbers 
+let addNumbers = 0;
+for (let i = 0; i < evenNumbers.length; i++) {
+    addNumbers += evenNumbers[i];
+}
+
+console.log(evenNumbers);
+console.log(addNumbers);
+
+//while loops for arbitrary cases when you don't know how many times you need to loop
+let person1 = {
+    name: "sally",
+    friend: {
+        name: "Joe",
+        friend: {
+            name: "steve",
+            friend: null,
+        },
+    },
+}
+
+let currentFriend = person1 
+while (currentFriend.friend !== null) {
+    currentFriend = currentFriend.friend;
+    console.log('Current friend: ${currentFriend.name}')
+}
+
+console.log{'Final friend ${currentFriend.name}'} // final friend is Sally
+
+const fileSystem = {
+    name: "root",
+    type: "folder",
+    children: [
+        {
+            name: "documents",
+            type: "folder", 
+            children: [
+                { name: "resume.pdf", type: "file"},
+                { name: "notes.txt", type: "file"},
+            ],
+        },
+        {
+            name: "photos",
+            type: "folder",
+            children: [{ name: "vacation.jpg", type: "file" }],
+        },
+        { name: "readme.txt", type: "file" },
+    ],
+}
+
+//count all file in the system 
+function countFiles(item) {
+    //base case if its a file count it
+    if (item.type === "file") return 1
+
+    //recursion case if its a folder, count file of all children
+    let count = 0
+    for (const child of item.children) {
+        count += countFiles(child) // recurse call each child
+    }
+    return count;
+}
+
+console.log(countFiles(fileSystem)) // should count 4 files total
+
+// recursion od for tree or nested data structures 
+// problem that can be broken down 
+
+const data =    [1, 
+                [2,3], 
+                [4, 
+                [5,6]],
+                7]
+    
+function findMax(array) {
+    let max = -Infinity;
+
+    for (const item of array) {
+        if (Array.isArray(item)) {
+        // recursion if arraythen find max in array
+        const subMax = findMax(item);
+        max = Math.max(max, subMax)
+        } else {
+            //base case if number compare the current max
+            max = Math.max(max, item);
+        }
+    }
+    return max;
+}
+
+console.log(findMax(data))
