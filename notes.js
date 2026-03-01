@@ -484,3 +484,82 @@ function findMax(array) {
 }
 
 console.log(findMax(data))
+
+// getElementsByClassName is live so whatever you change will happen instantly
+//querySelectorAll is a static node list where it not sutomatically update
+//Nodelists have forEach array method but not map or reduce, you will need to convert to array first
+// using query selector practice 
+// change header text to welcome!
+//mak paragraphs blue
+//hide last paragraph
+//add border to inputs with the class 'required'
+
+<h1 id= "main-header"> Original Header </h1>
+<p class= "text"> First para  </p>
+<p class= "text"> second Para </p>
+<p class= "text"> Thrid Para </p>
+<input type = "text" class = "required" placeholder = "Name" /> 
+<input type = "email" class = "required" placeholder= "Email" />
+<input type = "tel" placeholder = "Phone" />
+
+const Header = document.querySelector('main-header');
+Header.textContent = "welcome!"
+
+const blue = document.querySelectorAll('text');
+blue.style.backgroundColor = "blue";
+
+const hide = document.querySelector("p:last-child");
+hide.style.display = "none";
+
+document.querySelectorAll("input.required").forEach((input) => {
+    input.style.border = "2px solid black"
+});
+
+//event.target is specific to the event that was triggered i.e. clickedOn
+//event.currentTarget refers to the element the eventListener is atteched to
+
+//can use closest () to search up the DOM tree - good to use if you're
+//trying to find the next 'class' - closest is recommended because even if 
+// you edit the HTML it will find the next 'class' whereas parentElement wont.
+
+
+//tips and tricks for erros messages 
+// read the error there are three types syntax, runtime and logical
+//stack trace points out exactly where the error occures 
+// use console log to help ensure code is doing what its supposed to
+//i.e.
+console.info ("Application started. successfulyy");
+console.warn ("This feature will be deprecated in v2");
+console.error("Failed to use data");
+console.debug("Debugging info");
+// can comment out sections to find the bug
+// read the erros messages as they will help point what type and where the error occured
+
+console.assert();
+// you can test conditions and log messages - good for logical errors
+//first is a condition, if it is not met then print "message"
+const age = 15;
+console.assert(age >= 18, "user must be 18 or older");
+
+const response = {data: null};
+console.assert(response.data !== null, "response should not be null");
+
+const validEmail - "user@example.com";
+console.assert(validEmail.includes("@"), "Email must contain @")
+
+ //can use debugger as a breakpoint when you use source to debug yout code
+ const user = {name: "Amy", age : 33}
+ debugger // breakpoint added here using debugger so it stop analysing
+ console.log(structuredClone(user));
+ user.age = 22;
+
+ //under breakpoints > source >inspect 
+ //tick 'pause on uncaught errors' to catch errors 
+
+ // to add breakpoints click on line number in source under dev tools
+ // OR add 'debugger' to the text of code 
+
+
+ // vs code > click third icon on left hand side > create a launch json file
+ //> web app chrome > creates a file in VS > url change to 5500 as number to direct into browser
+ 
