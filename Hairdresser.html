@@ -88,6 +88,27 @@
             font-size: large;
         }
 
+        .nav-bar .side-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.23);
+            backdrop-filter: blur(10px);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1;
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .side-bar ul {
+            list-style-type: none;
+            line-height: 1.5rem;
+        }
+
 /* image styling */
         main {
         margin-top: 5rem;
@@ -182,6 +203,11 @@
         }
 
 /* breakpoints */
+        @media (max-width 800px) {
+            .hideOnMobile {
+                display: none;
+            }
+        }
         @media (min-width: 750px) {
             :root {
                 --base-font-size: 1.125rem;
@@ -209,18 +235,32 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        @media (max-width 400px) {
+            .side-bar {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
    <div class="wrapper">
     <header class="nav-bar">
-        <button class="menu-button">
+        <button class="menu-button" onclick="showSideBar()">
             <div class="menu-icon1"></div>
             <div class="menu-icon2"></div>
             <div class="menu-icon3"></div>
         </button>
+        <div>
+            <ul class="side-bar">
+                <li onclick="hideSideBar"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M504.6 148.5C515.9 134.9 514.1 114.7 500.5 103.4C486.9 92.1 466.7 93.9 455.4 107.5L320 270L184.6 107.5C173.3 93.9 153.1 92.1 139.5 103.4C125.9 114.7 124.1 134.9 135.4 148.5L278.3 320L135.4 491.5C124.1 505.1 125.9 525.3 139.5 536.6C153.1 547.9 173.3 546.1 184.6 532.5L320 370L455.4 532.5C466.7 546.1 486.9 547.9 500.5 536.6C514.1 525.3 515.9 505.1 504.6 491.5L361.7 320L504.6 148.5z"/></svg></a></li>
+                <li> <a href="#">About us</a></li>
+                <li> <a href="#">Pricing</a></li>
+                <li> <a href="#">Contact</a></li>
+            </ul>
+        </div>
         <h1> Raj's salon</h1>
-        <button class="booking-btn"> Book now </button>
+        <button class="booking-btn" class="hideOnMobile"> Book now </button>
     </header>
     <article class="main-article"> 
             <img src="hair2.jpg">
@@ -270,5 +310,16 @@
         </div>
     </footer>
    </div> 
+   <script> 
+    function showSideBar() {
+        const sidebar = document.querySelector('.menu-button');
+        sidebar.style.display = 'flex';
+    }
+
+    function hideSideBar() {
+        const hideBar = document.querySelector('.sidebar');
+        hideBar.style.display = 'none'
+    }
+   </script>
 </body>
 </html>
