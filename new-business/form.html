@@ -105,6 +105,37 @@
             border: 2px solid black;
         }
 
+        /* interactive parts */
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-green{
+            color: green;
+        }
+
+        .text-red {
+            color: red;
+        }
+
+        .border-green {
+            border: 2px solid green;
+        }
+
+        .border-red {
+            border: 2pz solid red;
+        }
+
         @media (max-width 584px) {
             .container {
                 width: 100%;
@@ -125,22 +156,37 @@
 <body>
     <div class="container">
         <div class="Title">
-            <form action="#">
+            <form action="#" id="contactForm">
                 <div class="user-details">
-                    <div class="input-box">
-                        <span class="details"> Full Name </span>
-                        <input type="text" placeholder="Enter your name" required>
+                    <div class="input-box formGroups">
+                        <label class="details"> Full Name </label>
+                        <div class="flex items-center">
+                                <input type="text" id="firstName" placeholder="Enter your name" required minlength="2" custommaxlength="10">
+                                <span class="error-icon hidden text-red"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                <span class="success-icon hidden text-green"><i class="fa-solid fa-check"></i></span>
+                            </div>
+                        <div class="error text-red"></div>
                     </div>
-                    <div class="input-box">
-                        <span class="details"> Email </span>
-                        <input type="text" placeholder="Enter your email" required>
+                    <div class="input-box formGroups">
+                        <label class="details"> Email </label>
+                        <div class="flex items-center">
+                                <input type="text" placeholder="Enter your email" required pattern>
+                                <span class="error-icon hidden text-red"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                <span class="success-icon hidden text-green"><i class="fa-solid fa-check"></i></span>
+                            </div>
+                        <div class="error text-red"></div>
                     </div>
-                    <div class="input-box">
-                        <span class="details"> Contact number </span>
-                        <input type="text" placeholder="Enter your mobile number" required>
+                    <div class="input-box formGroups">
+                        <label class="details"> Contact number </label>
+                            <div class="flex items-center">
+                                <input type="text" placeholder="Enter your mobile number" required custommaxlength="10">
+                                <span class="error-icon hidden text-red"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                <span class="success-icon hidden text-green"><i class="fa-solid fa-check"></i></span>
+                            </div>
+                        <div class="error text-red"></div>
                     </div>
-                    <div class="input-box">
-                        <span class="details"> Message </span>
+                    <div class="input-box formGroups">
+                        <label class="details"> Message </label>
                         <input type="text" class="text-box" placeholder="Type message ..." required>
                     </div>
                 </div>
@@ -150,6 +196,6 @@
             </form>
         </div>
     </div>
-    
+ <script src="form.js"></script>   
 </body>
 </html>
