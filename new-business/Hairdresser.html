@@ -41,14 +41,13 @@
         nav ul {
             width: 100%;
             list-style: none;
-            display: flex;
-            justify-content: flex-end;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             align-items: center;
         }
 
         nav li {
-            height: 50px;
-            justify-content: space-evenly ;
+            height: 80px;
         }
 
         nav a {
@@ -77,6 +76,7 @@
             width: 300px;
             height: 50px;
             font-size: large;
+            
         }
 
         .sidebar {
@@ -107,8 +107,8 @@
 
 /* image styling */
         main {
-        margin-top: 5rem;
-        margin-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
         text-align: center;
         }
 
@@ -136,14 +136,16 @@
         .projects {
             display: flex;
             flex-flow: column nowrap; 
-            color: antiquewhite;
+            color: var(--whitesmoke);
+            gap: 0;
+            padding: 0.2rem;
         }
 
         .project {
-            background: linear-gradient(135deg #668ba4 #97cba9);
+            background-color: var(--blue);
             display: grid;
             grid-template-columns: 1fr;
-            padding: 1em;
+            padding: 1rem;
         }
 
         h3 {
@@ -199,7 +201,7 @@
         }
 
 /* breakpoints */
-        @media (max-width 800px) {
+        @media screen and (max-width >800px) {
             .hideOnMobile {
                 display: none;
             }
@@ -232,7 +234,7 @@
             }
         }
 
-        @media (max-width 400px) {
+        @media screen and (max-width >400px) {
             .sidebar {
                 width: 100%;
             }
@@ -244,7 +246,7 @@
     <nav>
             <ul>
                 <li onclick="showSideBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg></a></li>
-                <li> Raj's salon </li>
+                <li><h1>Raj's salon </h1></li>
                 <li><button class="booking-btn" class="hideOnMobile"> Book now </button></li>
             </ul>
             <ul class="sidebar">

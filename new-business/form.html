@@ -133,10 +133,10 @@
         }
 
         .border-red {
-            border: 2pz solid red;
+            border: 2px solid red;
         }
 
-        @media (max-width 584px) {
+        @media screen and (max-width >584px) {
             .container {
                 width: 100%;
             }
@@ -170,7 +170,7 @@
                     <div class="input-box formGroups">
                         <label class="details"> Email </label>
                         <div class="flex items-center">
-                                <input type="text" placeholder="Enter your email" required pattern>
+                                <input type="text" placeholder="Enter your email" required pattern="^(.+)@(.+)$">
                                 <span class="error-icon hidden text-red"><i class="fa-regular fa-circle-exclamation"></i></span>
                                 <span class="success-icon hidden text-green"><i class="fa-solid fa-check"></i></span>
                             </div>
@@ -179,7 +179,7 @@
                     <div class="input-box formGroups">
                         <label class="details"> Contact number </label>
                             <div class="flex items-center">
-                                <input type="text" placeholder="Enter your mobile number" required custommaxlength="10">
+                                <input type="text" placeholder="Enter your mobile number" required minlength="10" customaxlength="13">
                                 <span class="error-icon hidden text-red"><i class="fa-regular fa-circle-exclamation"></i></span>
                                 <span class="success-icon hidden text-green"><i class="fa-solid fa-check"></i></span>
                             </div>
