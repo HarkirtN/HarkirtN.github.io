@@ -1,7 +1,7 @@
 //import { MouseEvent } from "react";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 
-// if you want different list, and do want to make different listGroups
+// if you want different list, and dont want to make different listGroups
 // use props first specify the object {items:[], heading: string }
 interface Props {
   items: string[];
@@ -20,6 +20,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
   // reacts updates the DOM and the state of the compnent changing, that is why we
   // need useState = selectedIndex is the current index, setSelectedIndex help react update
 
+  const onSubmitEvent = (event: MouseEvent) => console.log("clicked");
   //event handler
   // const handleClick = (event: MouseEvent) => console.log(event);
   // you will get error in TS if you dont specify type, need to import the type and then can acess
